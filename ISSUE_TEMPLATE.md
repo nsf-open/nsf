@@ -1,15 +1,12 @@
-## Expected Behavior
-
-
-## Actual Behavior
-
-
-## Steps to reproduce the behavior
+## User Story 
+As a \<type of user\>, I want \<a goal\> so that \<benefit\>. 
+  
+## Acceptance criteria
 - [ ]
 - [ ]
 - [ ]
 
-## This is issue is done when:
+## Definition of done
 - [ ]
 - [ ]
 - [ ]
