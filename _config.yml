@@ -1,2 +1,6 @@
 title: National Science Foundation
 theme: uswds-jekyll
+
+styles:
+  - /assets/uswds/css/uswds.min.css
+  - /assets/css/main.css

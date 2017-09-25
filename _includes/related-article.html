@@ -1,0 +1,8 @@
+<ul>
+{% for article in site.data.related-articles %}
+<li>
+  <h2>{{ article.title }}</h2>
+  <p>{{ article.summary }}</p>
+</li>
+{% endfor %}
+</ul>

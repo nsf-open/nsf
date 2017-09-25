@@ -11,7 +11,7 @@
 #
 primary:
   - text: Article
-    href: /article/
+    href: /
   - text: Funding
     links:
       - text: Demo link A

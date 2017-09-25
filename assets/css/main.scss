@@ -1,0 +1,31 @@
+---
+---
+
+.usa-footer {
+  display:none;
+}
+
+.usa-layout-article-main_content {
+  h1,
+  h2 {
+    max-width: 53rem;
+  }
+}
+
+
+.usa-header-basic .usa-navbar {
+  width: auto;
+}
+.usa-header-basic .usa-logo {
+  position: relative;
+  bottom: auto;
+  margin-top: 1rem;
+  span {
+    display: inline-block;
+    bottom: 30px;
+    position: relative;
+  }
+}
+.usa-logo img {
+    width: 75px;
+}
