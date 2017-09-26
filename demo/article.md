@@ -4,6 +4,9 @@ permalink: /
 sidenav:
 layout: article
 ---
+August 25, 2017 • [Discovery](#)
+
+By: Cheryl Dybas, NSF
 
 # Comb jellies hold keys to deep-sea evolution
 
@@ -24,6 +27,7 @@ Marine scientists are well acquainted with how comb jellies hunt, but they’re 
 The researchers are studying ctenophore evolution and diversification using new molecular biology techniques. In particular, they’re investigating how the deep sea is causing adaptations in comb jellies — knowledge that may shed light on other animals’ evolution.
 
 ![image-title-here](/assets/images/article-image-3.jpg){:class="img-responsive"}
+One of the largest ctenophores, this deep-sea species is the size of an American football.  Photo credit: Steve Haddock
 
 ## Animal evolution and the “gelatinous lifestyle”
 
@@ -38,6 +42,7 @@ Over eons, many shallow-water marine organisms have shifted their home ranges to
 Relationships among comb jelly species indicate that at least five of these transitions have taken place, with some ctenophores staying in shallow waters and others evolving to thrive in the deep sea, according to Haddock.
 
 ![image-title-here](/assets/images/article-image-2.jpg){:class="img-responsive"}
+A team of scuba divers collects ctenophores off the coast of Hawaii during a research expedition. Photo credit: Steve Haddock
 
 ## From the shallows to the depths
 
@@ -52,10 +57,12 @@ The scientists are developing new ways of examining the genetics that influence 
 Find related stories on NSF's Environmental Research and Education (ERE) programs, including Dimensions of Biodiversity.
 
 
-Questions about this piece? Contact NSF’s Cheryl Dybas at (703) 292-7734 or cdybas@nsf.gov.
+Questions about this piece? Contact NSF’s Cheryl Dybas at [(703) 292-7734](703 292-7734) or [cdybas@nsf.gov](cdybas@nsf.gov).
+
+---
 
 ### Learn more
 
 This research on comb jellies was made possible through a grant from the National Science Foundation's (NSF) Dimensions of Biodiversity program, which links functional, genetic, and phylogenetic dimensions of biodiversity.
 
-Find more Dimensions of Biodiversity stories here.
+Find more [Dimensions of Biodiversity stories](#).

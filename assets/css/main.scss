@@ -2,7 +2,7 @@
 ---
 
 .usa-footer {
-  display:none;
+  display: none;
 }
 
 .usa-layout-article-main_content {
@@ -12,20 +12,64 @@
   }
 }
 
+.usa-header-basic {
 
-.usa-header-basic .usa-navbar {
-  width: auto;
-}
-.usa-header-basic .usa-logo {
-  position: relative;
-  bottom: auto;
-  margin-top: 1rem;
-  span {
-    display: inline-block;
-    bottom: 30px;
+  .usa-navbar {
+    width: auto;
+  }
+
+  .usa-logo {
+    bottom: auto;
+    margin-top: 1rem;
     position: relative;
+
+    span {
+      bottom: 30px;
+      display: inline-block;
+      position: relative;
+    }
   }
 }
+
 .usa-logo img {
-    width: 75px;
+  width: 75px;
+}
+
+.related-article-header {
+  border-bottom: 3px solid #333;
+  font-size: 1.7rem;
+  margin-bottom: 2rem;
+}
+.related-articles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .related-article {
+    position: relative;
+    border-bottom: 1px solid #333;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    &:last-of-type {
+      border-bottom:none;
+    }
+  }
+
+  .related-article-img {
+    position: absolute;
+    top: 0;
+    width: 80px;
+  }
+
+  .related-article-title {
+    font-size: 1.7rem;
+    margin: 0;
+    margin-left: 100px;
+  }
+
+  .related-article-summary {
+    font-size: 1.5rem;
+    margin: 0;
+    margin-left: 100px;
+  }
 }
