@@ -12,7 +12,7 @@ By: Cheryl Dybas, NSF
 
 ## Comb jellies have evolved to live in vastly disparate environments.
 
-![image-title-here](/assets/images/article-image-1.jpg){:class="img-responsive"}
+![image-title-here]({{ site.baseurl }}/assets/images/article-image-1.jpg){:class="img-responsive"}
 
 Walk along a beach or pier in summer or fall and, if you're lucky, you may spot acomb jelly or two in the shallows. The luminescent drifters are named for the eight rows of shimmering combs that line their translucent bodies.
 
@@ -26,7 +26,7 @@ Marine scientists are well acquainted with how comb jellies hunt, but they’re 
 
 The researchers are studying ctenophore evolution and diversification using new molecular biology techniques. In particular, they’re investigating how the deep sea is causing adaptations in comb jellies — knowledge that may shed light on other animals’ evolution.
 
-![image-title-here](/assets/images/article-image-3.jpg){:class="img-responsive"}
+![image-title-here]({{ site.baseurl }}/assets/images/article-image-3.jpg){:class="img-responsive"}
 One of the largest ctenophores, this deep-sea species is the size of an American football.  Photo credit: Steve Haddock
 
 ## Animal evolution and the “gelatinous lifestyle”
@@ -41,7 +41,7 @@ Over eons, many shallow-water marine organisms have shifted their home ranges to
 
 Relationships among comb jelly species indicate that at least five of these transitions have taken place, with some ctenophores staying in shallow waters and others evolving to thrive in the deep sea, according to Haddock.
 
-![image-title-here](/assets/images/article-image-2.jpg){:class="img-responsive"}
+![image-title-here]({{ site.baseurl }}/assets/images/article-image-2.jpg){:class="img-responsive"}
 A team of scuba divers collects ctenophores off the coast of Hawaii during a research expedition. Photo credit: Steve Haddock
 
 ## From the shallows to the depths
