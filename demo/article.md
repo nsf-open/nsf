@@ -13,6 +13,7 @@ By: Cheryl Dybas, NSF
 ## Comb jellies have evolved to live in vastly disparate environments.
 
 ![image-title-here]({{ site.baseurl }}/assets/images/article-image-1.jpg){:class="img-responsive"}
+Found only in shallow waters, this comb jelly swims with its wings outstretched. Credit and larger version
 
 Walk along a beach or pier in summer or fall and, if you're lucky, you may spot acomb jelly or two in the shallows. The luminescent drifters are named for the eight rows of shimmering combs that line their translucent bodies.
 
