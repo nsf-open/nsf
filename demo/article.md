@@ -4,8 +4,7 @@ permalink: /
 sidenav:
 layout: article
 ---
-August 25, 2017 • [Discovery](#)
-
+August 25, 2017 • [Discovery](#)<br>
 By: Cheryl Dybas, NSF
 
 # Comb jellies hold keys to deep-sea evolution
