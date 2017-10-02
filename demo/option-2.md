@@ -1,6 +1,6 @@
 ---
 title: Option 2
-permalink: /option-2
+permalink: /option-2/
 sidenav:
 layout: option-2
 tags:
