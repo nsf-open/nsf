@@ -59,8 +59,15 @@ Researchers are currently collecting samples from shallow-water and deep-sea hab
 Scientists are developing new ways of examining the genetics that influence comb jellies’ tolerances and ability to adapt to new environments. For example, says Thuesen, "the deep sea is capable of squishing the structure of some proteins, so we're investigating how ctenophore proteins function in high pressures." Finding the answers to this and other questions may shed light on longstanding mysteries of the deep.
 
 
-<footer markdown="1">
+<i class="fa fa-2 fa-envelope-o" aria-hidden="true"></i>
+<i class="fa fa-2 fa-facebook-official" aria-hidden="true"></i>
+<i class="fa fa-2 fa-twitter" aria-hidden="true"></i>
+<i class="fa fa-2 fa-linkedin" aria-hidden="true"></i>
+<i class="fa fa-2 fa-pinterest" aria-hidden="true"></i>
+<i class="fa fa-2 fa-reddit-alien" aria-hidden="true"></i>
+<i class="fa fa-2 fa-tumblr" aria-hidden="true"></i>
 
+<footer markdown="1">
 ---
 
 ### Want to learn more about biodiversity?
