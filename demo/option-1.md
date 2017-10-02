@@ -1,24 +1,32 @@
 ---
-title: Article
+title: Option 1
 permalink: /
 sidenav:
-layout: article
+layout: option-1
+tags:
+  - Funded research
+  - Discovery
+  - Evolution
+  - Marine
+  - Creatures
+  - Grants
+  - Biodiversity
+
 ---
-August 25, 2017 • [Discovery](#)<br>
-By: Cheryl Dybas, NSF
+August 25, 2017 • By: Cheryl Dybas, NSF
 
 # Comb jellies shed light on animal adaptability
 
 ## Faux jellyfish have a lot to share about other species’ evolution.
 
 ![image-title-here]({{ site.baseurl }}/assets/images/article-image-1.jpg){:class="img-responsive"}
-Found only in shallow waters, this comb jelly swims with its wings outstretched. Credit and larger version
+<p class="image-caption">Found only in shallow waters, this comb jelly swims with its wings outstretched. <a href="#">Credit and larger version</a></p>
 
 If you’ve walked along a beach in the summer or fall, you’ve probably seen a comb jelly. Named for the iridescent combs lining their bodies, comb jellies aren’t true jellyfish. They’re ctenophores — simple marine animals that use their “combs” to move them through the water.
 
 The jellies’ luminescence and locomotion habits aren’t what scientists find most fascinating about them, though. These shapeless critters may hold keys to understanding how animals evolve to thrive in the deep sea. Current NSF-funded research may help scientists gain a deeper knowledge of how animals adapt to life in extreme environments.
 
-## Highly adaptable vacuums of the sea 
+## Highly adaptable vacuums of the sea
 
 Unlike true jellyfish, comb jellies don’t have — or need — stinging tentacles. Instead, they trap prey using adhesive cells. Swarms of these sea vacuums can devour whole patches of fish eggs in mere hours.
 
@@ -27,7 +35,7 @@ Though scientists are pretty well acquainted with how comb jellies hunt, but the
 The researchers are using new molecular biology techniques to study comb jelly evolution and diversification. In particular, they’re looking into how the deep sea is causing adaptations in comb jellies — knowledge that may shed light on how other animals have evolved.
 
 ![image-title-here]({{ site.baseurl }}/assets/images/article-image-3.jpg){:class="img-responsive"}
-One of the largest comb jellies, this deep-sea species is the size of an American football.  Photo credit: Steve Haddock
+<p class="image-caption">One of the largest comb jellies, this deep-sea species is the size of an American football.  <a href="#">Photo credit: Steve Haddock</a></p>
 
 ## Animal evolution and the “gelatinous lifestyle”
 
@@ -40,7 +48,7 @@ Over eons, many shallow-water ocean animals took up residence in the deep sea, d
 Relationships among comb jelly species indicate that at least five of these shallow-to-deep transitions have taken place, with some jellies staying in shallow waters and others evolving to thrive in the deep sea, according to Haddock. Because jellies have diversified to thrive in vastly different settings, their history can shed light on the larger story of animal evolution.
 
 ![image-title-here]({{ site.baseurl }}/assets/images/article-image-2.jpg){:class="img-responsive"}
-A team of scuba divers collects ctenophores off the coast of Hawaii during a research expedition. Photo credit: Steve Haddock
+<p class="image-caption">A team of scuba divers collects ctenophores off the coast of Hawaii during a research expedition. <a href="#">Photo credit: Steve Haddock</a></p>
 
 ## From the shallows to the depths
 
@@ -50,6 +58,9 @@ Researchers are currently collecting samples from shallow-water and deep-sea hab
 
 Scientists are developing new ways of examining the genetics that influence comb jellies’ tolerances and ability to adapt to new environments. For example, says Thuesen, "the deep sea is capable of squishing the structure of some proteins, so we're investigating how ctenophore proteins function in high pressures." Finding the answers to this and other questions may shed light on longstanding mysteries of the deep.
 
+
+<footer markdown="1">
+
 ---
 
 ### Want to learn more about biodiversity?
@@ -58,6 +69,8 @@ This research on comb jellies was made possible through a grant from the Nationa
 
 Find more [Dimensions of Biodiversity stories](#).
 
-### Media contact 
+---
+### Media contact
 
 Questions about this piece? Contact NSF’s Cheryl Dybas at [(703) 292-7734](703 292-7734) or [cdybas@nsf.gov](cdybas@nsf.gov).
+</footer>

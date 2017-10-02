@@ -81,3 +81,50 @@
     margin-left: 100px;
   }
 }
+
+.tags {
+  margin:0;
+  padding:0;
+  .usa-label {
+    display:inline-block;
+    text-transform:none;
+    background:#000;
+  }
+}
+
+.option-1 aside h2 {
+  color: #C64B00;
+}
+.option-1 {
+  .image-caption {
+  font-size: 1.4rem;
+  margin-top:-2rem;
+  padding-top: 0;
+  }
+  .color-grey {
+    color: #999;
+  }
+  footer {
+    hr {
+      height: 3px;
+      background-color: #333;
+      border: none;
+    }
+    h2,h3
+    {
+    color: #C64B00;
+    }
+  }
+  aside  {
+    margin-top: 3.5rem;
+  }
+  .usa-layout-article-main_content {
+    h2 {font-size: 2.3rem;}
+  p {line-height: 1.75;}
+  }
+  .article-cat {
+    margin-top: -4rem !important;
+    display: block;
+    margin-bottom: 5rem;
+  }
+}

@@ -1,0 +1,17 @@
+---
+layout: base
+main:
+  class: usa-grid usa-section usa-content usa-layout-article option-1
+---
+<div class="usa-width-two-thirds usa-layout-article-main_content">
+  {{ content }}
+</div>
+<aside class="usa-width-one-third usa-layout-docs-sidenav">
+  {% include related-article.html %}
+  <h2 class="related-article-header">Related content</h2>
+  <ul class="tags">
+    {% for tag in page.tags %}
+      <li class="usa-label">{{ tag }}</li>
+    {% endfor %}
+  </ul>
+</aside>
