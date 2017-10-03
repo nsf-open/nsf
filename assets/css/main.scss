@@ -140,11 +140,6 @@ aside h2 {
     margin-top: 3.5rem;
   }
 
-  .article-cat {
-    margin-top: -4rem !important;
-    display: block;
-    margin-bottom: 5rem;
-  }
   .share-header {
     font-size: 1.5rem !important;
     text-align: center;
@@ -170,5 +165,9 @@ aside h2 {
 .option-2 {
 .social-sharing .fa {display:inline-block !important; }
 
-
+.article-cat {
+  margin-top: -4rem !important;
+  display: block;
+  margin-bottom: 5rem;
+}
 }
