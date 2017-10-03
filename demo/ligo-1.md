@@ -4,13 +4,11 @@ permalink: /ligo-1/
 sidenav:
 layout: option-1
 tags:
+  - Physics
+  - Space
+  - Black holes
   - Funded research
-  - Discovery
-  - Evolution
-  - Marine
-  - Creatures
   - Grants
-  - Biodiversity
 main_image: ligo-main-image.jpg
 ---
 September 27, 2017 • [Discovery](#)<br>
