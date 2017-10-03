@@ -1,8 +1,9 @@
 ---
 layout: base
 main:
-  class: usa-grid usa-section usa-content usa-layout-article option-1
+  class: usa-section usa-content usa-layout-article option-1
 ---
+<div class="usa-grid">
 <div class="article-main-image">
 <img src="{{site.baseurl}}/assets/images/article-main-image.jpg">
 </div>
@@ -12,7 +13,13 @@ main:
 </div>
 <div class="usa-width-five-sixths usa-layout-article-main_content">
   {{ content }}
-  <aside class="usa-width-one-whole usa-layout-docs-sidenav">
-    {% include related-article.html %}
-  </aside>
 </div>
+</div>
+<aside>
+<div class="usa-grid usa-section">
+  {% include related-article.html %}
+</div>
+<div class="usa-grid">
+  {% include related-media.html %}
+</div>
+</aside>

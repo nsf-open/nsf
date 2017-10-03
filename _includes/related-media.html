@@ -1,0 +1,9 @@
+<h2 class="related-article-header">Related media</h2>
+<ul class="related-media">
+{% for media in site.data.related-media %}
+<li class="related-media-item">
+  <img src="{{ site.baseurl }}/assets/images/{{ media.photo }}" class="related-media-img"/>
+  <h3 class="related-media-title">{{ media.title }}</h3>
+</li>
+{% endfor %}
+</ul>
