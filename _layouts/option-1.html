@@ -3,17 +3,16 @@ layout: base
 main:
   class: usa-grid usa-section usa-content usa-layout-article option-1
 ---
-
-<div class="usa-width-two-thirds usa-layout-article-main_content">
-  <b class="article-cat">Discovery</b>
-  {{ content }}
+<div class="article-main-image">
+<img src="{{site.baseurl}}/assets/images/article-main-image.jpg">
 </div>
-<aside class="usa-width-one-third usa-layout-docs-sidenav">
-  {% include related-article.html %}
-  <h2 class="related-article-header">Related content</h2>
-  <ul class="tags">
-    {% for tag in page.tags %}
-      <li class="usa-label">{{ tag }}</li>
-    {% endfor %}
-  </ul>
-</aside>
+<div class="usa-width-one-sixth usa-layout-article-main_content">
+<h2 class="share-header">Share this:</h2>
+{% include social-sharing.html %}
+</div>
+<div class="usa-width-five-sixths usa-layout-article-main_content">
+  {{ content }}
+  <aside class="usa-width-one-whole usa-layout-docs-sidenav">
+    {% include related-article.html %}
+  </aside>
+</div>

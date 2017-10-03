@@ -19,7 +19,7 @@ August 25, 2017 • By: Cheryl Dybas, NSF
 
 ## Faux jellyfish have a lot to share about other species’ evolution.
 
-![image-title-here]({{ site.baseurl }}/assets/images/article-image-1.jpg){:class="img-responsive"}
+![image-title-here]({{ site.baseurl }}/assets/images/article-main-image.jpg){:class="img-responsive"}
 <p class="image-caption">Found only in shallow waters, this comb jelly swims with its wings outstretched. <a href="#">Credit and larger version</a></p>
 
 If you’ve walked along a beach in the summer or fall, you’ve probably seen a comb jelly. Named for the iridescent combs lining their bodies, comb jellies aren’t true jellyfish. They’re ctenophores — simple marine animals that use their “combs” to move them through the water.
@@ -59,13 +59,7 @@ Researchers are currently collecting samples from shallow-water and deep-sea hab
 Scientists are developing new ways of examining the genetics that influence comb jellies’ tolerances and ability to adapt to new environments. For example, says Thuesen, "the deep sea is capable of squishing the structure of some proteins, so we're investigating how ctenophore proteins function in high pressures." Finding the answers to this and other questions may shed light on longstanding mysteries of the deep.
 
 
-<i class="fa fa-2 fa-envelope-o" aria-hidden="true"></i>
-<i class="fa fa-2 fa-facebook-official" aria-hidden="true"></i>
-<i class="fa fa-2 fa-twitter" aria-hidden="true"></i>
-<i class="fa fa-2 fa-linkedin" aria-hidden="true"></i>
-<i class="fa fa-2 fa-pinterest" aria-hidden="true"></i>
-<i class="fa fa-2 fa-reddit-alien" aria-hidden="true"></i>
-<i class="fa fa-2 fa-tumblr" aria-hidden="true"></i>
+{% include social-sharing.html %}
 
 <footer markdown="1">
 ---

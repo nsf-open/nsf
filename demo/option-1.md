@@ -1,6 +1,6 @@
 ---
 title: Option 1
-permalink: /
+permalink: /option-1/
 sidenav:
 layout: option-1
 tags:
@@ -13,14 +13,12 @@ tags:
   - Biodiversity
 
 ---
-August 25, 2017 • By: Cheryl Dybas, NSF
+August 25, 2017 • [Discovery](#)<br>
+By: <b>Cheryl Dybas, NSF</b>
 
 # Comb jellies shed light on animal adaptability
 
 ## Faux jellyfish have a lot to share about other species’ evolution.
-
-![image-title-here]({{ site.baseurl }}/assets/images/article-image-1.jpg){:class="img-responsive"}
-<p class="image-caption">Found only in shallow waters, this comb jelly swims with its wings outstretched. <a href="#">Credit and larger version</a></p>
 
 If you’ve walked along a beach in the summer or fall, you’ve probably seen a comb jelly. Named for the iridescent combs lining their bodies, comb jellies aren’t true jellyfish. They’re ctenophores — simple marine animals that use their “combs” to move them through the water.
 
@@ -58,19 +56,16 @@ Researchers are currently collecting samples from shallow-water and deep-sea hab
 
 Scientists are developing new ways of examining the genetics that influence comb jellies’ tolerances and ability to adapt to new environments. For example, says Thuesen, "the deep sea is capable of squishing the structure of some proteins, so we're investigating how ctenophore proteins function in high pressures." Finding the answers to this and other questions may shed light on longstanding mysteries of the deep.
 
+Questions about this piece? Contact NSF’s Cheryl Dybas at [(703) 292-7734](703 292-7734) or [cdybas@nsf.gov](cdybas@nsf.gov).
 
 <footer markdown="1">
 
 ---
 
-### Want to learn more about biodiversity?
+### Learn more
 
 This research on comb jellies was made possible through a grant from the National Science Foundation's (NSF) Dimensions of Biodiversity program, which links functional, genetic, and phylogenetic dimensions of biodiversity.
 
 Find more [Dimensions of Biodiversity stories](#).
 
----
-### Media contact
-
-Questions about this piece? Contact NSF’s Cheryl Dybas at [(703) 292-7734](703 292-7734) or [cdybas@nsf.gov](cdybas@nsf.gov).
 </footer>

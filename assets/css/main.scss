@@ -134,3 +134,27 @@
   margin-right: 1rem;
   color: #666;
 }
+.option-1 {
+  .fa {display:inherit;margin-bottom: 1rem;}
+  .social-sharing {text-align: center;}
+  .article-main-image {
+    height: 400px;
+    overflow: hidden;
+    margin-top: -3rem;
+    margin-bottom: 3rem;
+  }
+  .share-header {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+  .related-articles {max-width: 100% !important;}
+  .related-article {
+    width: 45%;
+    display:inline-block;
+    border:none;
+    vertical-align: top;
+    margin-right: 3%;
+  }
+  .related-article:last-of-type {display:none;}
+  .related-article-header {border: none;}
+}
