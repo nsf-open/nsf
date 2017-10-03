@@ -3,11 +3,11 @@ layout: base
 main:
   class: usa-content usa-layout-article option-3
 ---
-<section class="usa-hero">
+<section class="usa-hero" style="background-image:url(../assets/images/{{ page.main_image }})">
         <div class="usa-grid">
           <div class="usa-hero-callout usa-section-dark">
             <h2><span class="usa-hero-callout-alt">Discovery</span></h2>
-            <p>Comb jellies shed light on animal adaptability</p>
+            <p>{{ page.article_title }}</p>
           </div>
         </div>
       </section>
@@ -17,10 +17,10 @@ main:
 </div>
 <aside class="usa-width-one-third usa-layout-docs-sidenav">
   <p>Published<br>
-  August 25, 2017</p>
+  {{ page.article_pub_date }}</p>
 
   <p>Written By<br>
-    Cheryl Dybas, NSF</p>
+    {{ page.article_by }}</p>
 
   <p>Media queries<br>
     For questions about this piece contact Cheryl Dybas at NSF<br>

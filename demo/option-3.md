@@ -11,6 +11,10 @@ tags:
   - Creatures
   - Grants
   - Biodiversity
+main_image: article-main-image.jpg
+article_title: Comb jellies shed light on animal adaptability
+article_pub_date: August 25, 2017
+article_by: Cheryl Dybas, NSF
 
 ---
 

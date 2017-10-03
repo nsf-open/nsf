@@ -11,6 +11,7 @@ tags:
   - Creatures
   - Grants
   - Biodiversity
+main_image: article-main-image.jpg
 
 ---
 August 25, 2017 • [Discovery](#)<br>
