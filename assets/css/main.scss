@@ -171,3 +171,27 @@ aside h2 {
   margin-bottom: 5rem;
 }
 }
+.option-3 {
+  .usa-hero {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background-image: url('/assets/images/article-main-image.jpg');
+    h2 {
+      border-bottom: 1px solid #fff;
+      font-size: 2rem;
+      font-weight: normal;
+    }
+    p {
+      font-size: 3rem;
+    }
+  }
+  .usa-hero-callout {
+    max-width: 45rem;
+  }
+  .related-article-header {
+    border:none;
+  }
+  .social-sharing .fa {
+    display:inline-block !important;
+  }
+}

@@ -1,0 +1,42 @@
+---
+layout: base
+main:
+  class: usa-content usa-layout-article option-3
+---
+<section class="usa-hero">
+        <div class="usa-grid">
+          <div class="usa-hero-callout usa-section-dark">
+            <h2><span class="usa-hero-callout-alt">Discovery</span></h2>
+            <p>Comb jellies shed light on animal adaptability</p>
+          </div>
+        </div>
+      </section>
+<div class="usa-grid usa-section">
+<div class="usa-width-two-thirds usa-layout-article-main_content">
+  {{ content }}
+</div>
+<aside class="usa-width-one-third usa-layout-docs-sidenav">
+  <p>Published<br>
+  August 25, 2017</p>
+
+  <p>Written By<br>
+    Cheryl Dybas, NSF</p>
+
+  <p>Media queries<br>
+    For questions about this piece contact Cheryl Dybas at NSF<br>
+Phone: <a href="#">(703) 292-7734</a><br>
+Email: <a href="#">cdybas@nsf.gov</a>
+  </p>
+  <p>Funding<br>
+    $30,000
+  </p>
+  <h2 class="related-article-header">Tags</h2>
+  <ul class="tags">
+    {% for tag in page.tags %}
+      <li class="usa-label">{{ tag }}</li>
+    {% endfor %}
+  </ul>
+  <h2 class="related-article-header">Share this article</h2>
+    {% include social-sharing.html %}
+</aside>
+</div>
