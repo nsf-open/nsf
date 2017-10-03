@@ -4,13 +4,11 @@ permalink: /ligo-3/
 sidenav:
 layout: option-3
 tags:
+  - Physics
+  - Space
+  - Black holes
   - Funded research
-  - Discovery
-  - Evolution
-  - Marine
-  - Creatures
   - Grants
-  - Biodiversity
 main_image: ligo-main-image.jpg
 article_title: Observatories locate black-hole collisions
 article_pub_date: September 27, 2017
