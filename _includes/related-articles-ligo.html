@@ -1,0 +1,11 @@
+<h2 class="related-article-header">Related articles</h2>
+<ul class="related-articles">
+{% for article in site.data.related-articles-ligo %}
+<li class="related-article">
+  <h3 class="related-article-title">{{ article.title }}</h3>
+    <img src="{{ site.baseurl }}/assets/images/{{ article.photo }}" class="related-article-img"/>
+  <p class="related-article-summary"><span class="color-grey">1 hour ago -</span> {{ article.summary }}<br><a href="#">Read more</a></p>
+
+</li>
+{% endfor %}
+</ul>
