@@ -4,13 +4,11 @@ permalink: /ligo-2/
 sidenav:
 layout: option-2
 tags:
+  - Physics
+  - Space
+  - Black holes
   - Funded research
-  - Discovery
-  - Evolution
-  - Marine
-  - Creatures
   - Grants
-  - Biodiversity
 main_image: ligo-main-image.jpg
 ---
 September 27, 2017 • By: NSF media team
