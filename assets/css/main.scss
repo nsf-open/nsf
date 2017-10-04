@@ -159,7 +159,7 @@ aside h2 {
       margin-right: 3%;
       a {text-decoration: none;color: #000;}
     }
-      .related-article:last-of-type {display:none;}
+      .related-article:nth-last-of-type(-n+4) {display:none;}
       .related-article-header {border: none;}
 }
 
