@@ -18,12 +18,10 @@ main:
 <aside>
 <div class="usa-grid usa-section">
   {% if page.title contains 'Option' %}
+  <h2 class="related-article-header">Related articles</h2>
   {% include related-article.html %}
   {% else %}
   {% include related-articles-ligo.html %}
   {% endif %}
-</div>
-<div class="usa-grid">
-  {% include related-media.html %}
 </div>
 </aside>

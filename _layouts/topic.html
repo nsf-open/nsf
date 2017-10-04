@@ -1,0 +1,19 @@
+---
+layout: base
+main:
+  class: usa-content usa-layout-article option-3
+---
+<section class="usa-hero" style="background-image:url(../assets/images/{{ page.main_image }})">
+        <div class="usa-grid">
+          <div class="usa-hero-callout usa-section-dark">
+            <h2><span class="usa-hero-callout-alt">{{ page.topic_title }}</span></h2>
+            <p>{{ page.topic_summary }}</p>
+          </div>
+        </div>
+      </section>
+<div class="usa-grid usa-section">
+<div class="usa-width-two-thirds usa-layout-article-main_content">
+  {{ content }}
+  {% include related-article.html %}
+</div>
+</div>

@@ -10,17 +10,12 @@
 #   links: primary
 #
 primary:
-  - text: Article
-    href: /
   - text: Funding
-    links:
-      - text: Demo link A
-        href: /two/a/
-      - text: Demo link B
-        href: /two/b/
-      - text: Demo link C
-        href: /two/c/
-  - text: Data explorer
+    href: #
+  - text: News
+    href: #
+  - text: About
+    href: #
 
 secondary: []
 
