@@ -242,4 +242,10 @@ aside h2 {
   .related-article-summary {
     color: #666;
   }
+  .usa-hero-callout {
+    background-color: transparent;
+    h2 { font-size: 4rem;}
+    p { font-size: 2.5rem; font-weight: normal;
+    }
+  }
 }
