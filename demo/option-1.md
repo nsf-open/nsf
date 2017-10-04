@@ -67,6 +67,6 @@ Questions about this piece? Contact NSF’s Cheryl Dybas at [(703) 292-7734](703
 
 This research on comb jellies was made possible through a grant from the National Science Foundation's (NSF) Dimensions of Biodiversity program, which links functional, genetic, and phylogenetic dimensions of biodiversity.
 
-<button>Find more marine life stories</button>
+<a href="/marine/" class="usa-button usa-button-primaty">Find more marine life stories</a>
 
 </footer>

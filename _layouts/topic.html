@@ -1,7 +1,7 @@
 ---
 layout: base
 main:
-  class: usa-content usa-layout-article option-3
+  class: usa-content usa-layout-article topic option-3 topic
 ---
 <section class="usa-hero" style="background-image:url(../assets/images/{{ page.main_image }}); background-position: 25%">
         <div class="usa-grid">
@@ -12,8 +12,10 @@ main:
         </div>
       </section>
 <div class="usa-grid usa-section">
-<div class="usa-width-two-thirds usa-layout-article-main_content">
+<div class="usa-layout-article-main_content">
   {{ content }}
+  {% include topic-tabs.html %}
   {% include related-article.html %}
+  <div style="text-align:center;"><a href="#">More articles</a></div>
 </div>
 </div>

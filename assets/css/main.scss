@@ -201,3 +201,45 @@ aside h2 {
       background-image: url('../images/ligo-main-image.jpg');
   }
 }
+.topic {
+  .related-article {
+    min-height: 150px;
+    padding-right: 225px;
+    a {
+      text-decoration: none;
+      color: initial;
+    }
+    img {
+      right: 0;
+      width: 200px;
+    }
+    h3,p {
+      margin-left: 0;
+      width: 55ch;
+    }
+  }
+  .topic-tabs {
+    list-style: none;
+    margin: 2rem 0 6rem;
+    padding: 0;
+    border-bottom: 3px solid #333;
+    width: 100%;
+    max-width: 100% !important;
+    li {
+      display:inline-block;
+      margin-bottom: 0;
+      padding: 10px 20px;
+      &.active {
+      border-bottom: 3px solid #C64B00;
+      margin-bottom: -3px;
+      }
+    }
+  }
+  .related-article-title {
+    line-height: 1.5;
+    margin-bottom: .5rem;
+  }
+  .related-article-summary {
+    color: #666;
+  }
+}
