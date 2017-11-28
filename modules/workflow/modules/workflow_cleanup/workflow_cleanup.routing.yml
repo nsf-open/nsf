@@ -1,0 +1,7 @@
+workflow.cleanup.settings:
+  path: '/admin/config/workflow/workflow/cleanup'
+  defaults:
+    _form: '\Drupal\workflow_cleanup\Form\WorkflowCleanupSettingsForm'
+    _title: 'Clean up workflow'
+  requirements:
+    _permission: 'administer workflow'

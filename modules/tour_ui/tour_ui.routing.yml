@@ -1,0 +1,54 @@
+entity.tour.collection:
+  path: '/admin/config/user-interface/tour'
+  defaults:
+    _entity_list: 'tour'
+    _title: 'Tours'
+  requirements:
+    _permission: 'administer tour'
+
+tour_ui.tour.add:
+  path: '/admin/config/user-interface/tour/add'
+  defaults:
+    _entity_form: tour.default
+    _title: 'Add tour'
+  requirements:
+    _permission: 'administer tour'
+
+entity.tour.edit_form:
+  path: '/admin/config/user-interface/tour/manage/{tour}'
+  defaults:
+    _entity_form: tour.default
+    _title: 'Edit tour'
+  requirements:
+    _permission: 'administer tour'
+
+entity.tour.delete_form:
+  path: '/admin/config/user-interface/tour/manage/{tour}/delete'
+  defaults:
+    _entity_form: tour.delete
+  requirements:
+    _permission: 'administer tour'
+
+tour_ui.tip.add:
+  path: '/admin/config/user-interface/tour/manage/{tour}/tip/add/{type}'
+  defaults:
+    _controller: '\Drupal\tour_ui\Controller\TourTipController:add'
+    _title: 'Add tip'
+  requirements:
+    _permission: 'administer tour'
+
+tour_ui.tip.edit:
+  path: '/admin/config/user-interface/tour/manage/{tour}/tip/edit/{tip}'
+  defaults:
+    _controller: '\Drupal\tour_ui\Controller\TourTipController:edit'
+    _title: 'Edit tip'
+  requirements:
+    _permission: 'administer tour'
+
+tour_ui.tip.delete:
+  path: '/admin/config/user-interface/tour/manage/{tour}/tip/delete/{tip}'
+  defaults:
+    _form: '\Drupal\tour_ui\Form\TourTipDeleteForm'
+    _title: 'Delete tip'
+  requirements:
+    _permission: 'administer tour'

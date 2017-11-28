@@ -1,0 +1,27 @@
+# Schema for the configuration files of the transitions for Workflow module.
+
+workflow.transition.*:
+  type: config_entity
+  label: 'Workflow Transition'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: string
+      label: 'Label'
+    module:
+      type: string
+      label: 'Module'
+    from_sid:
+      type: string
+      label: 'From workflow state'
+    to_sid:
+      type: string
+      label: 'To workflow state'
+    roles:
+      type: sequence
+      label: 'User roles'
+      sequence:
+        type: string
+        label: 'Role'

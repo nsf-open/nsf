@@ -1,0 +1,16 @@
+{
+  "name": "drupal/typed_data",
+  "description": "Extends the core Typed Data API with new APIS and features.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require": {
+  },
+  "require-dev" : {
+    "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+    "drupal/coder": "8.2.*",
+    "squizlabs/php_codesniffer": "2.9.*",
+    "symfony/yaml": "3.*"
+  }
+}

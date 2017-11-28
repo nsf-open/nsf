@@ -1,0 +1,10 @@
+name: Typed Data
+type: module
+description: 'Extends the core Typed Data API with new APIs and features.'
+# core: 8.x
+
+# Information added by Drupal.org packaging script on 2017-10-19
+version: '8.x-1.0-alpha1+34-dev'
+core: '8.x'
+project: 'typed_data'
+datestamp: 1508419447

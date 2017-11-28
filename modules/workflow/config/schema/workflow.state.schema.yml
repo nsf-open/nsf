@@ -1,0 +1,27 @@
+# Schema for the configuration files of the state from Workflow module.
+
+workflow.state.*:
+  type: config_entity
+  label: 'Workflow State'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    status:
+      type: boolean
+      label: 'Status'
+    label:
+      type: string
+      label: 'Label'
+    module:
+      type: string
+      label: 'Module'
+    wid:
+      type: string
+      label: 'Machine name of the attached Workflow'
+    weight:
+      type: integer
+      label: 'Weight'
+    sysid:
+      type: integer
+      label: 'SysId'

@@ -1,0 +1,12 @@
+name: Typed Data Widgets Test
+type: module
+description: 'Implements example forms using typed data widgets.'
+# core: 8.x
+dependencies:
+  - drupal:typed_data
+
+# Information added by Drupal.org packaging script on 2017-10-19
+version: '8.x-1.0-alpha1+34-dev'
+core: '8.x'
+project: 'typed_data'
+datestamp: 1508419447

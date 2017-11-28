@@ -1,0 +1,7 @@
+# Menu tasks for Workflow Cleanup.
+
+workflow.cleanup.settings:
+  title: 'Cleanup'
+  route_name: workflow.cleanup.settings
+  base_route: entity.workflow_type.collection
+  weight: 7

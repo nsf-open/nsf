@@ -1,0 +1,14 @@
+name: Tour UI
+type: module
+description : 'Provides a UI to manage guided tours.'
+package: Development
+configure: admin/config/user-interface/tour
+# core: 8.x
+dependencies:
+  - tour
+
+# Information added by Drupal.org packaging script on 2017-06-06
+version: '8.x-1.0-alpha1'
+core: '8.x'
+project: 'tour_ui'
+datestamp: 1496774344

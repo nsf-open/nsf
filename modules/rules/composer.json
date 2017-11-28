@@ -1,0 +1,14 @@
+{
+  "name": "drupal/rules",
+  "description": "React on events and conditionally evaluate actions.",
+  "type": "drupal-module",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {
+  },
+  "require-dev": {
+    "dealerdirect/phpcodesniffer-composer-installer": "dev-master",
+    "drupal/coder": "8.2.*",
+    "squizlabs/php_codesniffer": "2.9.*"
+  }
+}
