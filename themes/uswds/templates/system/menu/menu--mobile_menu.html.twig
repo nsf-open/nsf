@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Override of system/menu.html.twig for the mobile menu.
+ */
+#}
+
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, 0, NULL, duplicate_parent) }}
+
+{% macro menu_links(items, menu_level, parent, duplicate_parent) %}
+  {% import _self as menus %}
+
+  {% if items %}
+
+    {% if menu_level == 0 %}
+    <ul class="usa-sidenav-list usa-accordion" aria-multiselectable="true">
+    {% else %}
+    <ul id="mobilemenu-{{ parent.uuid }}" class="usa-sidenav-sub_list">
+
+      {% if duplicate_parent %}
+      <li>
+        <a href="{{ parent.url }}"{% if parent.is_current %} class="usa-current"{% endif %}>
+          <span>{{ parent.title }}</span>
+        </a>
+      </li>
+      {% endif %}
+
+    {% endif %}
+
+    {% for item in items %}
+      <li>
+
+        {% if item.below %}
+        <button class="usa-accordion-button" aria-expanded="{{ item.in_active_trail ? 'true' : 'false' }}" aria-controls="mobilemenu-{{ item.uuid }}">
+          <span>{{ item.title }}</span>
+        </button>
+        {{ menus.menu_links(item.below, menu_level + 1, item, duplicate_parent) }}
+        {% else %}
+        <a href="{{ item.url }}"{% if item.is_current %} class="usa-current"{% endif %}>
+          <span>{{ item.title }}</span>
+        </a>
+        {% endif %}
+
+      </li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endmacro %}

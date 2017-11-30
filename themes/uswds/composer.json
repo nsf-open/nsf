@@ -1,0 +1,12 @@
+{
+    "name": "drupal/uswds",
+    "description": "Drupal theme for the U.S. Web Design Standards library.",
+    "type": "drupal-theme",
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "homepage": "https://www.drupal.org/project/uswds",
+    "support": {
+      "issues": "https://www.drupal.org/project/issues/uswds?categories=All",
+      "source": "http://cgit.drupalcode.org/uswds"
+    }
+}
