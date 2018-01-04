@@ -1,0 +1,31 @@
+{#
+/**
+ * @file brightcove-video-player.html.twig
+ * Default theme implementation to display Brightcove video player.
+ *
+ * This template is used when dispalying the Brightcove video player.
+ *
+ * Available variables:
+ *   - video_id
+ *   - account
+ *   - player
+ *   - embed
+ *
+ * @ingroup themeable
+ */
+#}
+<video
+  data-video-id="{{- video_id -}}"
+  data-account="{{- account -}}"
+  data-player="{{- player -}}"
+  data-embed="{{- embed -}}"
+  {% if height != null %}
+    height="{{ height }}"
+  {% endif %}
+  {% if width != null %}
+    width="{{ width }}"
+  {% endif %}
+  class="video-js" controls
+  >
+</video>
+<script src="//players.brightcove.net/{{- account -}}/{{- player -}}_{{- embed -}}/index.min.js"></script>

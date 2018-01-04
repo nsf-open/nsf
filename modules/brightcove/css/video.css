@@ -1,0 +1,14 @@
+/**
+ * @file
+ * CSS for the video form.
+ */
+
+#status-pseudo-title {
+  display: table;
+  font-weight: bold;
+  margin: 0 0 0.1em;
+}
+
+.field--name-status .form-item-status-value {
+  margin-top: 0;
+}

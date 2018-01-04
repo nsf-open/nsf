@@ -1,0 +1,32 @@
+# Schema for Brightcove Subscriptions.
+
+brightcove.brightcove_subscription.*:
+  type: config_entity
+  label: 'Brightcove Subscription config'
+  mapping:
+    id:
+      type: string
+      label: 'Brightcove ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    status:
+      type: bool
+      label: 'Status'
+    default:
+      type: bool
+      label: 'Default'
+    api_client_id:
+      type: string
+      label: 'API Client ID'
+    endpoint:
+      type: string
+      label: 'Endpoint'
+    events:
+      type: sequence
+      label: 'Events'
+      sequence:
+        type: string
+        label: 'Event'

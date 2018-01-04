@@ -1,0 +1,7 @@
+status: true
+dependencies: {  }
+name: 'Brightcove video tags'
+vid: brightcove_video_tags
+description: null
+hierarchy: 0
+weight: 0

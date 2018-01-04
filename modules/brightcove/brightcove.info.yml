@@ -1,0 +1,23 @@
+name: Brightcove
+type: module
+description: Brightcove Video Connect
+# core: 8.x
+package: Brightcove
+configure: entity.brightcove_api_client.collection
+dependencies:
+  - datetime
+  - image
+  - inline_entity_form
+  - link
+  - options
+  - path
+  - time_formatter
+  - taxonomy
+  - token
+  - views
+
+# Information added by Drupal.org packaging script on 2017-03-24
+version: '8.x-1.2'
+core: '8.x'
+project: 'brightcove'
+datestamp: 1490367795

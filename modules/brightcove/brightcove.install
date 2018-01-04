@@ -1,0 +1,173 @@
+<?php
+/**
+ * @file
+ * Brightcove install file.
+ */
+use Drupal\brightcove\Entity\BrightcoveAPIClient;
+use Drupal\brightcove\Entity\BrightcoveSubscription;
+use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_requirements().
+ */
+function brightcove_requirements($phase) {
+  $requirements = [];
+
+  $requirements['brightcove'] = [
+    'title' => 'Brightcove API',
+  ];
+
+  // Check for API availability.
+  if (!class_exists('Brightcove\API\API')) {
+    $requirements['brightcove'] += [
+      'description' => t('Missing Brightcove API from the vendor folder.'),
+      'severity' => REQUIREMENT_ERROR,
+    ];
+  }
+
+  // If everything passes show that the Brightcove API is installed
+  // successfully.
+  if (!isset($requirements['severity']) || $requirements['severity'] == REQUIREMENT_OK) {
+    $requirements['brightcove'] += [
+      'description' => t('Installed'),
+      'severity' => REQUIREMENT_OK,
+    ];
+  }
+
+  return $requirements;
+}
+
+/**
+ * Copy values from brightcove_callback table to a expirable key value store.
+ */
+function brightcove_update_8100(&$sandbox) {
+  // Get database connection.
+  $database = \Drupal::database();
+
+  if (!isset($sandbox['progress'])) {
+    $sandbox['progress'] = 0;
+    $sandbox['max'] = $database->select('brightcove_callback', 'bc')
+      ->fields('bc', ['id'])
+      ->countQuery()
+      ->execute()
+      ->fetchField();
+  }
+
+  $key_value_expirable = \Drupal::keyValueExpirable('brightcove_callback');
+  $entries = $database->select('brightcove_callback')
+    ->fields('brightcove_callback')
+    ->orderBy('id', 'ASC')
+    ->range($sandbox['progress'], 50)
+    ->execute()
+    ->fetchAll();
+  foreach ($entries as $entry) {
+    $sandbox['progress']++;
+
+    if (REQUEST_TIME < $entry->expires) {
+      $key_value_expirable->setWithExpire($entry->token, $entry->video_id, $entry->expires - REQUEST_TIME);
+    }
+  }
+
+  $sandbox['#finished'] = empty($sandbox['max']) ? 1 : ($sandbox['progress'] / $sandbox['max']);
+}
+
+/**
+ * Drop brightcove_callback table.
+ */
+function brightcove_update_8101() {
+  \Drupal::database()
+    ->schema()
+    ->dropTable('brightcove_callback');
+}
+
+/**
+ * Update BrightcoveAPIClient config entity's schema.
+ */
+function brightcove_update_8102() {
+  $config_factory = \Drupal::configFactory();
+  foreach ($config_factory->listAll('brightcove.brightcove_api_client.') as $brightcove_api_client_config) {
+    $config = $config_factory->getEditable($brightcove_api_client_config);
+    $config->clear('access_token');
+    $config->clear('access_token_expire_date');
+    $config->save(TRUE);
+  }
+  drupal_flush_all_caches();
+}
+
+/**
+ * Sets a default callback for the reference_id.
+ */
+function brightcove_update_8103() {
+  /** @var \Drupal\Core\Field\BaseFieldDefinition $installed_field_definition */
+  $installed_field_definition = \Drupal::entityDefinitionUpdateManager()->getFieldStorageDefinition('reference_id', 'brightcove_video');
+  $installed_field_definition->setDefaultValueCallback('\Drupal\brightcove\Entity\BrightcoveVideo::getDefaultReferenceId');
+  \Drupal::entityDefinitionUpdateManager()->updateFieldStorageDefinition($installed_field_definition);
+
+  /** @var \Drupal\Core\Field\BaseFieldDefinition $installed_field_definition */
+  $installed_field_definition = \Drupal::entityDefinitionUpdateManager()->getFieldStorageDefinition('reference_id', 'brightcove_playlist');
+  $installed_field_definition->setDefaultValueCallback('\Drupal\brightcove\Entity\BrightcovePlaylist::getDefaultReferenceId');
+  \Drupal::entityDefinitionUpdateManager()->updateFieldStorageDefinition($installed_field_definition);
+}
+
+/**
+ * Updates the entity with the video_url base field.
+ */
+function brightcove_update_8104() {
+  $storage_definition = BaseFieldDefinition::create('uri')
+    ->setLabel(t('Video source URL'))
+    ->setDisplayOptions('form', [
+      'type' => 'uri',
+    ])
+    ->setDisplayOptions('view', [
+      'type' => 'uri_link',
+      'label' => 'inline',
+      'settings' => [
+        'trim_length' => 150,
+        'target' => '_blank',
+      ],
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('video_url', 'brightcove_video', 'brightcove_video', $storage_definition);
+}
+
+
+/**
+ * Update entity definitions.
+ */
+function brightcove_update_8105() {
+  \Drupal::entityDefinitionUpdateManager()->applyUpdates();
+}
+
+/**
+ * Create default subscription for each available client.
+ */
+function brightcove_update_8106() {
+  /** @var BrightcoveAPIClient[] $clients */
+  $clients = BrightcoveAPIClient::loadMultiple();
+  $messages = [];
+  foreach ($clients as $client) {
+    // Create new default subscription if not exist yet.
+    $id = "default_{$client->id()}";
+    $subscription = BrightcoveSubscription::load($id);
+
+    if (empty($subscription)) {
+      BrightcoveSubscription::create([
+        'id' => $id,
+        'status' => FALSE,
+        'default' => TRUE,
+        'api_client_id' => $client->id(),
+        'endpoint' => Url::fromRoute('brightcove_notification_callback', [], ['absolute' => TRUE])->toString(),
+        'events' => ['video-change'],
+      ])->save(FALSE);
+    }
+    else {
+      $messages[] = t('Default subscription for "@client" client already exist, skipping...', ['@client' => $client->label()]) . PHP_EOL;
+    }
+  }
+
+  return implode(PHP_EOL, $messages);
+}

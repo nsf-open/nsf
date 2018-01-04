@@ -1,0 +1,11 @@
+name: Time Formatter
+type: module
+description: Field formatter for integer fields storing time in seconds/milliseconds displaying it in various formats.
+# core: 8.x
+package: Field types
+
+# Information added by Drupal.org packaging script on 2016-02-23
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'time_formatter'
+datestamp: 1456256340

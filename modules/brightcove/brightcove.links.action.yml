@@ -1,0 +1,23 @@
+entity.brightcove_api_client.add_form:
+  route_name: 'entity.brightcove_api_client.add_form'
+  title: 'Add Brightcove API Client'
+  appears_on:
+    - entity.brightcove_api_client.collection
+
+entity.brightcove_video.add_form:
+  route_name: entity.brightcove_video.add_form
+  title: 'Add Brightcove Video'
+  appears_on:
+    - entity.brightcove_video.collection
+
+entity.brightcove_playlist.add_form:
+  route_name: entity.brightcove_playlist.add_form
+  title: 'Add Brightcove Playlist'
+  appears_on:
+    - entity.brightcove_playlist.collection
+
+entity.brightcove_subscription.add_form:
+  route_name: entity.brightcove_subscription.add_form
+  title: 'Add subscription'
+  appears_on:
+    - entity.brightcove_subscription.collection

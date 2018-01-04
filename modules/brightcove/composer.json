@@ -1,0 +1,26 @@
+{
+  "name": "drupal/brightcove",
+  "type": "drupal-module",
+  "description": "Brightcove Video Connect",
+  "keywords": ["Drupal", "Brightcove"],
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "László CSÉCSY",
+      "homepage": "https://github.com/boobaa"
+    },
+    {
+      "name": "Tamás NAGY",
+      "homepage": "https://github.com/ycecube"
+    }
+  ],
+  "homepage": "https://www.drupal.org/project/brightcove",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/brightcove",
+    "source": "http://cgit.drupalcode.org/brightcove"
+  },
+  "require": {
+    "brightcove/api": "dev-master"
+  }
+}

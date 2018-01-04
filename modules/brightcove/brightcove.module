@@ -1,0 +1,307 @@
+<?php
+/**
+ * @file
+ * Brightcove module.
+ */
+
+use Drupal\brightcove\Entity\BrightcoveSubscription;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Database\Database;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\taxonomy\TermInterface;
+use Drupal\taxonomy\VocabularyInterface;
+use Drupal\brightcove\BrightcoveUtil;
+use Drupal\brightcove\Entity\BrightcoveAPIClient;
+use Drupal\brightcove\Entity\BrightcoveCustomField;
+use Drupal\brightcove\Entity\BrightcovePlayer;
+
+/**
+ * Initiates a Brightcove-to-Drupal sync by adding API clients to the queue.
+ *
+ * It does nothing if any of the five affected queues is non-empty.
+ *
+ * Syncing from Brightcove to Drupal works as follows.
+ * - This function adds all the API Clients (registered in the Drupal site) to
+ *   the brightcove_client_queue_worker.
+ * - BrightcoveClientQueueWorker::processItem() counts the videos and the
+ *   playlists on that API Client, then adds pages of them to the
+ *   brightcove_video_page_queue_worker and
+ *   brightcove_playlist_page_queue_worker. All those pages may contain up to
+ *   100 items.
+ * - Both BrightcoveVideoPageQueueWorker::processItem() and
+ *   BrightcovePlaylistPageQueueWorker::processItem() cycles through all the
+ *   videos/playlists on that page, and add them to
+ *   brightcove_video_queue_worker or brightcove_playlist_queue_worker,
+ *   respectively.
+ * - Both BrightcoveVideoQueueWorker::processItem() and
+ *   BrightcovePlaylistQueueWorker::processItem() process one video/playlist at
+ *   a time. However, the latter may throw an exception if it encounters with a
+ *   video which is not yet available on the Drupal side. In this case, the
+ *   playlist is not removed from the queue with the hope that the affected
+ *   video becomes available by the next time this playlist queue item is
+ *   processed.
+ *
+ * This process ensures that syncing from Brightcove to Drupal won't eat up all
+ * the server's resources, and those queues are run from cron, and it's even
+ * possible to run those queues from batches.
+ */
+function _brightcove_initiate_sync() {
+  // Get queues.
+  $client_queue = \Drupal::queue('brightcove_client_queue_worker');
+  $player_queue = \Drupal::queue('brightcove_player_queue_worker');
+  $player_delete_queue = \Drupal::queue('brightcove_player_delete_queue_worker');
+  $custom_field_queue = \Drupal::queue('brightcove_custom_field_queue_worker');
+  $custom_field_delete_queue = \Drupal::queue('brightcove_custom_field_delete_queue_worker');
+  $video_page_queue = \Drupal::queue('brightcove_video_page_queue_worker');
+  $video_queue = \Drupal::queue('brightcove_video_queue_worker');
+  $video_delete_queue = \Drupal::queue('brightcove_video_delete_queue_worker');
+  $text_track_queue = \Drupal::queue('brightcove_text_track_queue_worker');
+  $text_track_queue_delete = \Drupal::queue('brightcove_text_track_delete_queue_worker');
+  $playlist_page_queue = \Drupal::queue('brightcove_playlist_page_queue_worker');
+  $playlist_queue = \Drupal::queue('brightcove_playlist_queue_worker');
+  $playlist_delete_queue = \Drupal::queue('brightcove_playlist_delete_queue_worker');
+  $subscriptions_queue = \Drupal::queue('brightcove_subscriptions_queue_worker');
+  $subscription_delete_queue = \Drupal::queue('brightcove_subscription_delete_queue_worker');
+  $subscription_queue = \Drupal::queue('brightcove_subscription_queue_worker');
+
+  // Check whether the update/create queues are empty or not.
+  $update_create_queues_empty = $client_queue->numberOfItems() == 0
+    && $player_queue->numberOfItems() == 0
+    && $custom_field_queue->numberOfItems() == 0
+    // Yes, these sticks out, but it has to be checked here, because the
+    // players and custom fields delete queues are assembled in the client
+    // queue.
+    && $player_delete_queue->numberOfItems() == 0
+    && $custom_field_delete_queue->numberOfItems() == 0
+    && $video_page_queue->numberOfItems() == 0
+    && $video_queue->numberOfItems() == 0
+    && $text_track_queue->numberOfItems() == 0
+    && $text_track_queue_delete->numberOfItems() == 0
+    && $playlist_page_queue->numberOfItems() == 0
+    && $playlist_queue->numberOfItems() == 0;
+
+  // Run video deletion queue only if all of the other queues are empty too.
+  if ($update_create_queues_empty && $video_delete_queue->numberOfItems() == 0) {
+    // Collect videos for the queue worker to check whether they are deleted
+    // from Brightcove or not.
+    $videos = Database::getConnection()->select('brightcove_video', 'bv')
+      ->fields('bv', ['bcvid', 'api_client', 'video_id'])
+      ->condition('video_id', NULL, 'IS NOT')
+      ->execute();
+    foreach ($videos as $video) {
+      $video_delete_queue->createItem($video);
+    }
+  }
+
+  // Run playlist deletion queue only if all of the other queues are empty too.
+  if ($update_create_queues_empty && $playlist_delete_queue->numberOfItems() == 0) {
+    // Collect playlists for the queue worker to check whether they are deleted
+    // from Brightcove or not.
+    $playlists = Database::getConnection()->select('brightcove_playlist', 'bv')
+      ->fields('bv', ['bcplid', 'api_client', 'playlist_id'])
+      ->condition('playlist_id', NULL, 'IS NOT')
+      ->execute();
+    foreach ($playlists as $playlist) {
+      $playlist_delete_queue->createItem($playlist);
+    }
+  }
+
+  // Don't start new sync until all of the queues are not emptied.
+  if ($update_create_queues_empty) {
+    $brightcove_api_clients = BrightcoveAPIClient::loadMultiple();
+
+    /** @var \Drupal\brightcove\Entity\BrightcoveAPIClient $api_client */
+    foreach ($brightcove_api_clients as $api_client) {
+      $client_queue->createItem($api_client->id());
+    }
+  }
+
+  // Start Subscription queue workers.
+  if ($update_create_queues_empty && $subscriptions_queue->numberOfItems() == 0 && $subscription_queue->numberOfItems() == 0 && $subscription_delete_queue->numberOfItems() == 0) {
+    // Check for new Subscriptions.
+    /** @var \Drupal\brightcove\Entity\BrightcoveAPIClient[] $brightcove_api_clients */
+    $brightcove_api_clients = BrightcoveAPIClient::loadMultiple();
+    foreach ($brightcove_api_clients as $api_client) {
+      $subscriptions_queue->createItem($api_client->id());
+    }
+
+    // Remove non-existing Subscriptions.
+    /** @var BrightcoveSubscription[] $subscriptions */
+    $subscriptions = BrightcoveSubscription::loadMultiple();
+    foreach ($subscriptions as $subscription) {
+      if (!empty($api_client = $subscription->getAPIClient()) && strpos($subscription->id(), 'default_') === FALSE) {
+        $subscription_delete_queue->createItem([
+          'api_client_id' =>  $api_client->id(),
+          'subscription_id' => $subscription->id(),
+        ]);
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_cron().
+ */
+function brightcove_cron() {
+  _brightcove_initiate_sync();
+}
+
+/**
+ * Implements hook_entity_extra_field_info().
+ */
+function brightcove_entity_extra_field_info() {
+  $extra = array();
+
+  $extra['brightcove_video']['brightcove_video']['display']['brightcove_video_player'] = [
+    'label' => t('Video'),
+    'description' => t('The video player'),
+    'weight' => -1000,
+    'visible' => TRUE,
+  ];
+
+  $extra['brightcove_video']['brightcove_video']['display']['brightcove_custom_fields'] = [
+    'label' => t('Custom fields'),
+    'description' => t('Video custom fields'),
+    'weight' => 1000,
+    'visible' => TRUE,
+  ];
+
+  $extra['brightcove_playlist']['brightcove_playlist']['display']['brightcove_playlist_video_player'] = [
+    'label' => t('Playlist'),
+    'description' => t('The playlist video player'),
+    'weight' => -1000,
+    'visible' => TRUE,
+  ];
+
+  return $extra;
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function brightcove_brightcove_video_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('brightcove_video_player')) {
+    /** @var \Drupal\brightcove\Entity\BrightcoveVideo $video_entity */
+    $video_entity = $entity;
+
+    // Only display the video player if we have all the info needed for it.
+    if ($video_id = $video_entity->getVideoId()) {
+      /** @var \Drupal\brightcove\Entity\BrightcoveApiClient $api_client */
+      $api_client = BrightcoveAPIClient::load($video_entity->getAPIClient());
+
+      /** @var \Drupal\brightcove\Entity\BrightcovePlayer $player */
+      if ($player = $video_entity->getPlayer()) {
+        $player = BrightcovePlayer::load($player);
+      }
+      if (!$player) {
+        $player = BrightcovePlayer::loadByPlayerId($api_client->getDefaultPlayer());
+      }
+
+      $build['brightcove_video_player'] = [
+        '#theme' => ['brightcove_video_player'],
+        '#video_id' => $video_id,
+        '#account' => $api_client->getAccountID(),
+        '#player' => BrightcoveUtil::getDefaultPlayer($video_entity),
+        '#height' => !empty($player) ? $player->getHeight() : NULL,
+        '#width' => !empty($player) ? $player->getWidth() : NULL,
+      ];
+    }
+  }
+
+  if ($display->getComponent('brightcove_custom_fields')) {
+    /** @var \Drupal\brightcove\Entity\BrightcoveVideo $video_entity */
+    $video_entity = $entity;
+
+    $custom_fields = BrightcoveCustomField::loadMultipleByAPIClient($video_entity->getAPIClient());
+
+    // Show custom fields in the extra field, if it exists and has a value.
+    $custom_field_values = $video_entity->getCustomFieldValues();
+    $build['brightcove_custom_fields'] = [];
+    foreach ($custom_fields as $custom_field) {
+      $custom_field_id = $custom_field->getCustomFieldId();
+      if (empty($custom_field_values[$custom_field_id])) {
+        continue;
+      }
+
+      $build['brightcove_custom_fields'][$custom_field_id] = [
+        '#type' => 'item',
+        '#title' => $custom_field->getName(),
+        '#markup' => $custom_field_values[$custom_field_id],
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_view().
+ */
+function brightcove_brightcove_playlist_view(array &$build, EntityInterface $entity, EntityViewDisplayInterface $display, $view_mode) {
+  if ($display->getComponent('brightcove_playlist_video_player')) {
+    /** @var \Drupal\brightcove\Entity\BrightcovePlaylist $playlist_entity */
+    $playlist_entity = $entity;
+
+    // Only display the video player if we have all the info needed for it.
+    if ($playlist_id = $playlist_entity->getPlaylistId()) {
+      /** @var \Drupal\brightcove\Entity\BrightcoveApiClient $api_client */
+      $api_client = BrightcoveUtil::getAPIClient($playlist_entity->getAPIClient());
+
+      /** @var \Drupal\brightcove\Entity\BrightcovePlayer $player */
+      if ($player = $playlist_entity->getPlayer()) {
+        $player = BrightcovePlayer::load($player);
+      }
+      if (!$player) {
+        $player = BrightcovePlayer::loadByPlayerId($api_client->getDefaultPlayer());
+      }
+
+      $build['brightcove_playlist_video_player'] = [
+        '#theme' => ['brightcove_playlist_video_player'],
+        '#playlist_id' => $playlist_id,
+        '#account' => $api_client->getAccountID(),
+        '#player' => BrightcoveUtil::getDefaultPlayer($playlist_entity),
+        '#height' => !empty($player) ? $player->getHeight() : NULL,
+        '#width' => !empty($player) ? $player->getWidth() : NULL,
+      ];
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function brightcove_theme($existing, $type, $theme, $path) {
+  return [
+    'brightcove_video_player' => [
+      'variables' => [
+        'video_id' => 0,
+        'account' => 0,
+        'player' => BrightcoveAPIClient::DEFAULT_PLAYER,
+        'embed' => 'default',
+        'height' => NULL,
+        'width' => NULL,
+      ],
+    ],
+    'brightcove_playlist_video_player' => [
+      'variables' => [
+        'playlist_id' => 0,
+        'account' => 0,
+        'player' => BrightcoveAPIClient::DEFAULT_PLAYER,
+        'embed' => 'default',
+        'height' => NULL,
+        'width' => NULL,
+      ],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_entity_access().
+ */
+function brightcove_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  // Disable editing/deleting video tags.
+  if (($entity instanceof TermInterface && $entity->getVocabularyId() == 'brightcove_video_tags' || $entity instanceof VocabularyInterface && $entity->id() == 'brightcove_video_tags') && ($operation == 'update' || $operation == 'delete')) {
+    return AccessResult::forbidden();
+  }
+  return AccessResult::neutral();
+}

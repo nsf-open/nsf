@@ -1,0 +1,3 @@
+defaultAPIClient: ''
+notification:
+  callbackExpirationTime: 86400

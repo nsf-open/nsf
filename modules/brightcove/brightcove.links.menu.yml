@@ -1,0 +1,51 @@
+# Brightcove API Client menu items definition.
+entity.brightcove_api_client.collection:
+  title: 'Brightcove API Client'
+  route_name: entity.brightcove_api_client.collection
+  description: 'Configure Brightcove API Clients (credentials).'
+  parent: system.admin_config_media
+  weight: 99
+
+# Brightcove Video menu items definition.
+entity.brightcove_video.collection:
+  title: 'Brightcove Videos'
+  route_name: entity.brightcove_video.collection
+  description: 'List Brightcove Videos.'
+  parent: system.admin_content
+  weight: 100
+
+brightcove_video.settings:
+  title: Brightcove Video settings
+  description: 'Configure Brightcove Videos.'
+  route_name: brightcove_video.settings
+  parent: system.admin_structure
+  weight: 100
+
+# Brightcove Playlist menu items definition.
+entity.brightcove_playlist.collection:
+  title: 'Brightcove Playlists'
+  route_name: entity.brightcove_playlist.collection
+  description: 'List Brightcove Playlists.'
+  parent: system.admin_content
+  weight: 102
+
+brightcove_playlist.settings:
+  title: 'Brightcove Playlist settings'
+  description: 'Configure Brightcove Playlists.'
+  route_name: brightcove_playlist.settings
+  parent: system.admin_structure
+  weight: 102
+
+# Brightcove Status Overview menu item definition.
+brightcove_status_overview:
+  title: 'Brightcove Status Overview'
+  route_name: brightcove_status_overview
+  description: 'List all Brightcove entities and queues with the number of items in them.'
+  parent: system.admin_reports
+
+# Brightcove Subscriptions
+entity.brightcove_subscription.collection:
+  title: 'Brightcove Subscriptions'
+  description: 'Manage Brightcove subscriptions.'
+  route_name: entity.brightcove_subscription.collection
+  parent: system.admin_config_system

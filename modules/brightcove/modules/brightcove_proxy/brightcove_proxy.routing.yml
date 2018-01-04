@@ -1,0 +1,14 @@
+brightcove_proxy.config_form:
+  path: '/admin/config/system/brightcove-proxy'
+  defaults:
+    _form: '\Drupal\brightcove_proxy\Form\BrightcoveProxyForm'
+    _title: 'Brightcove proxy configuration'
+  requirements:
+    _permission: 'administer brightcove configuration'
+
+brightcove_proxy.test:
+  path: '/brightcove-proxy/test'
+  defaults:
+    _controller: '\Drupal\brightcove_proxy\Controller\BrightcoveProxyTest::testPage'
+  requirements:
+    _access: 'TRUE'

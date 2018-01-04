@@ -1,0 +1,30 @@
+# Schema for Brightcove proxy.
+
+brightcove_proxy.config:
+  type: config_object
+  label: 'Brightcove proxy configuration'
+  mapping:
+    use_proxy:
+      type: boolean
+      label: 'Use proxy'
+    proxy_username:
+      type: string
+      label: 'Proxy username'
+    proxy_password:
+      type: string
+      label: 'Proxy password'
+    http_proxy_tunnel:
+      type: boolean
+      label: 'HTTP proxy tunnel'
+    proxy_auth:
+      type: string
+      label: 'Proxy auth'
+    proxy_port:
+      type: integer
+      label: 'Proxy port'
+    proxy_type:
+      type: string
+      label: 'Proxy type'
+    proxy:
+      type: string
+      label: 'Proxy'

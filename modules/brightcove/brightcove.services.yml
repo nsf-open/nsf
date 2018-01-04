@@ -1,0 +1,12 @@
+services:
+  brightcove.access_check:
+    class: Drupal\brightcove\Access\CSRFCallbackAccessCheck
+    tags:
+      - { name: access_check, applies_to: _brightcove_csrf_callback_access_check }
+
+  brightcove_init:
+    class: Drupal\brightcove\EventSubscriber\BrightcoveInitSubscriber
+    arguments:
+      - @config.factory
+    tags:
+      - { name: event_subscriber }

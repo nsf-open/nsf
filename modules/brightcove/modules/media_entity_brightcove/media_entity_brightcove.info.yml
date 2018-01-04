@@ -1,0 +1,13 @@
+name: Media Entity Brightcove
+type: module
+# core: 8.x
+package: Brightcove
+dependencies:
+  - media_entity
+  - brightcove
+
+# Information added by Drupal.org packaging script on 2017-03-24
+version: '8.x-1.2'
+core: '8.x'
+project: 'brightcove'
+datestamp: 1490367795

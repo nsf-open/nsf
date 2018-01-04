@@ -1,0 +1,14 @@
+{
+  "name": "drupal/time_formatter",
+  "type": "drupal-module",
+  "description": "Field formatter for integer fields storing time in seconds/milliseconds displaying it in various formats.",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/time_formatter",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/time_formatter",
+    "source": "http://cgit.drupalcode.org/time_formatter"
+  },
+  "require": { }
+}

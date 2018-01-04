@@ -1,0 +1,65 @@
+# Brightcove Video routing definition
+brightcove_video.settings_tab:
+  route_name: brightcove_video.settings
+  title: 'Settings'
+  base_route: brightcove_video.settings
+
+entity.brightcove_video.canonical:
+  route_name: entity.brightcove_video.canonical
+  base_route: entity.brightcove_video.canonical
+  title: 'View'
+
+entity.brightcove_video.edit_form:
+  route_name: entity.brightcove_video.edit_form
+  base_route: entity.brightcove_video.canonical
+  title: Edit
+
+entity.brightcove_video.delete_form:
+  route_name:  entity.brightcove_video.delete_form
+  base_route:  entity.brightcove_video.canonical
+  title: Delete
+  weight: 10
+
+entity.brightcove_video.collection:
+  title: 'Brightcove Videos'
+  route_name: entity.brightcove_video.collection
+  base_route: system.admin_content
+
+# Brightcove Text Track routing definition.
+entity.brightcove_text_track.canonical:
+  route_name: entity.brightcove_text_track.canonical
+  base_route: entity.brightcove_text_track.canonical
+  title: 'View'
+
+entity.brightcove_text_track.delete_form:
+  route_name:  entity.brightcove_text_track.delete_form
+  base_route:  entity.brightcove_text_track.canonical
+  title: Delete
+  weight: 10
+
+# Brightcove Playlist routing definition
+brightcove_playlist.settings_tab:
+  route_name: brightcove_playlist.settings
+  title: 'Settings'
+  base_route: brightcove_playlist.settings
+
+entity.brightcove_playlist.canonical:
+  route_name: entity.brightcove_playlist.canonical
+  base_route: entity.brightcove_playlist.canonical
+  title: 'View'
+
+entity.brightcove_playlist.edit_form:
+  route_name: entity.brightcove_playlist.edit_form
+  base_route: entity.brightcove_playlist.canonical
+  title: Edit
+
+entity.brightcove_playlist.delete_form:
+  route_name:  entity.brightcove_playlist.delete_form
+  base_route:  entity.brightcove_playlist.canonical
+  title: Delete
+  weight: 10
+
+entity.brightcove_playlist.collection:
+  title: 'Brightcove Playlists'
+  route_name: entity.brightcove_playlist.collection
+  base_route: system.admin_content

@@ -1,0 +1,66 @@
+# API client configuration.
+administer brightcove configuration:
+  title: 'Administer Brightcove configuration'
+
+# Video entities.
+add brightcove videos:
+  title: 'Create new Brightcove Videos'
+
+access brightcove videos overview page:
+  title: 'Access the Brightcove Videos overview page'
+  description: 'Get an overview of all Brightcove Video.'
+
+administer brightcove videos:
+  title: 'Administer Brightcove Videos'
+  description: 'Allow to access the administration form to configure Brightcove Videos.'
+  restrict access: true
+
+delete brightcove videos:
+  title: 'Delete Brightcove Videos'
+
+edit brightcove videos:
+  title: 'Edit Brightcove Videos'
+
+view published brightcove videos:
+  title: 'View published Brightcove Videos'
+
+view unpublished brightcove videos:
+  title: 'View unpublished Brightcove Videos'
+
+# Playlist entities.
+add brightcove playlists:
+  title: 'Create new Brightcove Playlists'
+
+access brightcove playlists overview page:
+  title: 'Access the Brightcove Playlists overview page'
+  description: 'Get an overview of all Brightcove Playlist.'
+
+administer brightcove playlists:
+  title: 'Administer Brightcove Playlists'
+  description: 'Allow to access the administration form to configure Brightcove Playlists.'
+  restrict access: true
+
+delete brightcove playlists:
+  title: 'Delete Brightcove Playlists'
+
+edit brightcove playlists:
+  title: 'Edit Brightcove Playlists'
+
+view published brightcove playlists:
+  title: 'View published Brightcove Playlists'
+
+view unpublished brightcove playlists:
+  title: 'View unpublished Brightcove Playlists'
+
+# Text Track entities.
+add brightcove text track entities:
+  title: 'Create new Brightcove Text Track entities'
+
+delete brightcove text track entities:
+  title: 'Delete Brightcove Text Track entities'
+
+view published brightcove text track entities:
+  title: 'View published Brightcove Text Track entities'
+
+view unpublished brightcove text track entities:
+  title: 'View unpublished Brightcove Text Track entities'

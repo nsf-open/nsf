@@ -1,0 +1,18 @@
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.brightcove_video_tags
+  module:
+    - text
+id: taxonomy_term.brightcove_video_tags.default
+targetEntityType: taxonomy_term
+bundle: brightcove_video_tags
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

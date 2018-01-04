@@ -1,0 +1,7 @@
+brightcove.video:
+  version: 1.0
+  css:
+    theme:
+      css/video.css: {}
+  js:
+    js/video.js: {}

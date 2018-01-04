@@ -1,0 +1,5 @@
+brightcove_proxy.config_form:
+  title: 'Brightcove proxy'
+  description: 'Configure proxy for Brightcove clients.'
+  parent: system.admin_config_system
+  route_name: brightcove_proxy.config_form

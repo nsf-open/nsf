@@ -1,0 +1,7 @@
+services:
+  brightcove_proxy_init:
+    class: Drupal\brightcove_proxy\EventSubscriber\BrightcoveProxyInitSubscriber
+    arguments:
+      - @config.factory
+    tags:
+      - { name: event_subscriber }

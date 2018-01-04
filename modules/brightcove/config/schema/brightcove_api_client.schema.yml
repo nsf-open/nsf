@@ -1,0 +1,29 @@
+# Schema for the configuration files of the Brightcove module.
+
+brightcove.brightcove_api_client.*:
+  type: config_entity
+  label: 'Brightcove API Client config'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    account_id:
+      type: string
+      label: 'Account ID'
+    client_id:
+      type: string
+      label: 'Client ID'
+    default_player:
+      type: string
+      label: 'Default player'
+    secret_key:
+      type: string
+      label: 'secret key'
+    uuid:
+      type: string
+    max_custom_fields:
+      type: int
+      label: 'Maximum number of custom fields'

@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * The module file for media_entity_brightcove.
+ */
+
+use Drupal\media_entity\Entity\MediaBundle;
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for media_bundle.
+ */
+function media_entity_brightcove_media_bundle_insert(MediaBundle $bundle) {
+  $field_name = $bundle->type_configuration['source_field'];
+  $form_display_settings = [
+    'type' => 'brightcove_inline_entity_form_complex',
+    'settings' => [
+      'form_mode' => 'default',
+      'allow_new' => 1,
+      'allow_existing' => 1,
+      'match_operator' => 'CONTAINS',
+    ],
+    'third_party_settings' => [],
+    'weight' => 0,
+  ];
+  // Create (or update) the entity form display for this new media bundle to
+  // include this new field with some more sane defaults.
+  /** @var \Drupal\Core\Config\Entity\ConfigEntityStorage $entity_form_display_storage */
+  $entity_form_display_storage = \Drupal::getContainer()->get('entity_type.manager')->getStorage('entity_form_display');
+  /** @var \Drupal\Core\Entity\Entity\EntityFormDisplay $entity_form_display */
+  $entity_form_display = $entity_form_display_storage->load('media.' . $bundle->id() . '.default');
+  if (!$entity_form_display) {
+    $values = [
+      'status' => TRUE,
+      'targetEntityType' => 'media',
+      'bundle' => $bundle->id(),
+      'mode' => 'default',
+      'content' => [
+        $field_name => $form_display_settings,
+      ],
+    ];
+    $entity_form_display = $entity_form_display_storage->create($values);
+  }
+  else {
+    $entity_form_display->setComponent($field_name, $form_display_settings);
+  }
+  $entity_form_display_storage->save($entity_form_display);
+}

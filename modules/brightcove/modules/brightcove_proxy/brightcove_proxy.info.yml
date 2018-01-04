@@ -1,0 +1,14 @@
+name: Brightcove Proxy
+description: Proxy configuration for Brightcove Video Connect.
+type: module
+# core: 8.x
+package: Brightcove
+configure: brightcove_proxy.config_form
+dependencies:
+  - brightcove
+
+# Information added by Drupal.org packaging script on 2017-03-24
+version: '8.x-1.2'
+core: '8.x'
+project: 'brightcove'
+datestamp: 1490367795
