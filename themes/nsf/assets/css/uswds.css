@@ -3702,20 +3702,15 @@ h1, h2, h3, h4, h5, h6 {
     color: #999999;
     font-weight: normal; }
 
-p {
-  color: #666666; }
-
-.usa-nav-primary a.usa-nav-link {
-  color: #3e94cf; }
-
+p,
 input,
 textarea,
 .usa-sidenav-list a,
 .usa-accordion,
 .usa-accordion-bordered {
-  color: #000; }
+  color: #666666; }
 
-img.image-style-news-main-story {
-  overflow: visible; }
+.usa-nav-primary a.usa-nav-link {
+  color: #3e94cf; }
 
 /*# sourceMappingURL=uswds.css.map */

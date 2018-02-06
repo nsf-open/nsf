@@ -25,7 +25,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 3rem;
 }
 
-p {
+p,
+input,
+textarea,
+.usa-sidenav-list a,
+.usa-accordion,
+.usa-accordion-bordered {
     color: $color-gray;
 }
 
@@ -33,11 +38,3 @@ p {
     color: $color-focus; // $color-primary-alt
 }
 
-// Override USWDS standard so text isn't white-on-white.
-input,
-textarea,
-.usa-sidenav-list a,
-.usa-accordion,
-.usa-accordion-bordered {
-    color: #000;
-}
