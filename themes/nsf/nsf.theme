@@ -12,3 +12,17 @@ function subtheme_theme_suggestions_block_alter(array &$suggestions, array $vari
         array_splice($suggestions, 1, 0, 'block__bundle__' . $variables['elements']['content']['#block_content']->bundle());
     }
 }
+
+function nsf_preprocess_region(&$variables) {
+  if ($variables['region'] == 'sidebar_second') {
+    if ($node = \Drupal::routeMatch()->getParameter('node')) {
+      if ($node->getType() == 'news') {
+        // @todo: Before accessing fields, verify that they aren't empty.
+        $variables['node_field_media_queries'] = $node->get('field_media_queries')->view();
+        $variables['node_field_publication_date'] = $node->get('field_publication_date')->view();
+        $variables['node_field_funding'] = $node->get('field_funding')->view();
+        // @todo: Add tags once you've added a taxonomy field.
+      }
+    }
+  }
+}
