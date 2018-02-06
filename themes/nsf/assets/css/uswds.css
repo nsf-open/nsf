@@ -3708,7 +3708,11 @@ p {
 .usa-nav-primary a.usa-nav-link {
   color: #3e94cf; }
 
-input {
+input,
+textarea,
+.usa-sidenav-list a,
+.usa-accordion,
+.usa-accordion-bordered {
   color: #000; }
 
 img.image-style-news-main-story {

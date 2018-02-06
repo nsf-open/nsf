@@ -33,6 +33,11 @@ p {
     color: $color-focus; // $color-primary-alt
 }
 
-input {
+// Override USWDS standard so text isn't white-on-white.
+input,
+textarea,
+.usa-sidenav-list a,
+.usa-accordion,
+.usa-accordion-bordered {
     color: #000;
 }
