@@ -3690,9 +3690,12 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Source Sans Pro";
   font-weight: bold; }
 
+.region-sidebar-first,
+.region-sidebar-second {
+  background-color: #E7F5FF; }
+
 .region-sidebar-second {
   float: right;
-  background-color: #E7F5FF;
   padding: 3rem; }
   .region-sidebar-second h4 {
     text-transform: uppercase;

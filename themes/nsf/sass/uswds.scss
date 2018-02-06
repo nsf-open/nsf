@@ -8,10 +8,13 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+.region-sidebar-first,
+.region-sidebar-second {
+    background-color: $color-primary-alt-light;
+}
+
 .region-sidebar-second {
     float: right;
-
-    background-color: $color-primary-alt-light;
 
     h4 {
         text-transform: uppercase;
