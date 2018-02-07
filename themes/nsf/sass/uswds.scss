@@ -35,7 +35,10 @@ select.form-select {
     color: $color-gray;
 }
 
-.usa-nav-primary a.usa-nav-link {
+.usa-nav-primary a.usa-nav-link,
+.usa-nav-primary .usa-nav-link,
+.usa-nav-primary a.usa-current span,
+.usa-nav-primary .usa-current span {
     color: $color-focus; // $color-primary-alt
 }
 

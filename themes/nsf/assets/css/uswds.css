@@ -3656,7 +3656,10 @@ textarea,
 select.form-select {
   color: #666666; }
 
-.usa-nav-primary a.usa-nav-link {
+.usa-nav-primary a.usa-nav-link,
+.usa-nav-primary .usa-nav-link,
+.usa-nav-primary a.usa-current span,
+.usa-nav-primary .usa-current span {
   color: #3e94cf; }
 
 .filter-wrapper {
