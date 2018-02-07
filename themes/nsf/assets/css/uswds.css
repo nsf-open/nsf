@@ -3713,4 +3713,7 @@ textarea,
 .usa-nav-primary a.usa-nav-link {
   color: #3e94cf; }
 
+.filter-wrapper {
+  display: none; }
+
 /*# sourceMappingURL=uswds.css.map */
