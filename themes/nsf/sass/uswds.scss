@@ -30,7 +30,8 @@ input,
 textarea,
 .usa-sidenav-list a,
 .usa-accordion,
-.usa-accordion-bordered {
+.usa-accordion-bordered,
+select.form-select {
     color: $color-gray;
 }
 
@@ -41,4 +42,3 @@ textarea,
 .filter-wrapper {
     display: none;
 }
-
