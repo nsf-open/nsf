@@ -13,3 +13,18 @@ function subtheme_theme_suggestions_block_alter(array &$suggestions, array $vari
     }
 }
 
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ * @param array $variables
+ *
+ * Adapted from http://boylesoftware.com/blog/overcoming-broken-preview-drupal-8/.
+ * Someday this issue will be resolved and this preprocessor won't be necessary:
+ * https://www.drupal.org/project/drupal/issues/2890758
+ * In the meantime, this is necessary for enabling node preview to show any
+ * content-type-specific blocks. (Relevant for our articles.)
+ */
+function nsf_preprocess_html(&$variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node_preview')) {
+    $variables['node_type'] = $node->getType();
+  }
+}
