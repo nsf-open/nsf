@@ -3662,4 +3662,19 @@ select.form-select {
 .filter-wrapper {
   display: none; }
 
+.usa-form-large {
+  max-width: none; }
+
+form [type="submit"], form [type="submit"] {
+  display: inline-block; }
+
+textarea {
+  height: auto; }
+
+label {
+  margin-top: 1rem; }
+
+input, textarea, select {
+  max-width: none; }
+
 /*# sourceMappingURL=uswds.css.map */

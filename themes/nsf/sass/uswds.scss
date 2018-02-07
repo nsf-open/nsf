@@ -39,6 +39,31 @@ select.form-select {
     color: $color-focus; // $color-primary-alt
 }
 
+// Hide help text for text formats. See https://github.com/18F/nsf/issues/130.
 .filter-wrapper {
     display: none;
+}
+
+// Override max-width that's throwing forms off
+.usa-form-large {
+    max-width: none;
+}
+
+form [type="submit"], form [type="submit"] {
+    display: inline-block;
+}
+
+// Reduce the 'Revision log message' field (and others) to a reasonable size
+textarea {
+    height: auto;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+input, textarea, select {
+    max-width: none;
+    // @todo: find a happy medium. 46rem isn't appropriate, but something else
+    // will be.
 }
