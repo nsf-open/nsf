@@ -3680,4 +3680,18 @@ label {
 input, textarea, select {
   max-width: none; }
 
+#block-nsf-views-block-news-block-1 ul {
+  margin: 0 auto;
+  text-align: center; }
+#block-nsf-views-block-news-block-1 li {
+  display: inline-block;
+  vertical-align: top; }
+
+img.image-style-news-main-story {
+  max-width: none; }
+
+.usa-header-basic .usa-logo {
+  top: 0;
+  bottom: auto; }
+
 /*# sourceMappingURL=uswds.css.map */

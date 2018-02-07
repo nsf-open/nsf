@@ -70,3 +70,25 @@ input, textarea, select {
     // @todo: find a happy medium. 46rem isn't appropriate, but something else
     // will be.
 }
+
+// @todo: Improve machine name. This is the Featured News block.
+#block-nsf-views-block-news-block-1 {
+    ul {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+    }
+}
+
+img.image-style-news-main-story {
+    max-width: none;
+}
+
+.usa-header-basic .usa-logo {
+    top: 0;
+    bottom: auto;
+}
