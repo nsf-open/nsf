@@ -3693,5 +3693,7 @@ img.image-style-news-main-story {
 .usa-header-basic .usa-logo {
   top: 0;
   bottom: auto; }
+  .usa-header-basic .usa-logo img {
+    max-width: none; }
 
 /*# sourceMappingURL=uswds.css.map */

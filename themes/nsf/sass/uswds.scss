@@ -91,4 +91,7 @@ img.image-style-news-main-story {
 .usa-header-basic .usa-logo {
     top: 0;
     bottom: auto;
+    img {
+        max-width: none;
+    }
 }
