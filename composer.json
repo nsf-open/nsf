@@ -12,7 +12,8 @@
         "drupal/inline_entity_form": "^1.0@beta",
         "drupal/time_formatter": "1.x-dev",
         "drupal/entity_embed": "^1.0",
-        "drupal/embed": "^1.0"
+        "drupal/embed": "^1.0",
+        "drupal/entity_browser": "^2.0"
     },
     "replace": {
         "drupal/core": "^8.4"
