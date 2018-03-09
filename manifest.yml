@@ -1,0 +1,14 @@
+---
+applications:
+- name: nsf
+  buildpack: php_buildpack
+  memory: 512M
+  disk_quota: 512M
+  timeout: 180
+  services:
+    - # s3 bucket
+    - # db
+  env:
+    AWS_S3_ENDPOINT: ''
+    ACCOUNT_NAME: ''
+    HASH_SALT: ''
