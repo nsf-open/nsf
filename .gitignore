@@ -17,7 +17,7 @@ core
 vendor
 
 # Ignore local versions of modules.
-modules/contrib/*
+modules/*
 
 # Ignore local database dumps.
 db_dumps
