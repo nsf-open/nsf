@@ -14,6 +14,12 @@ install_drupal() {
         --account-name="$ACCOUNT_NAME" \
         --account-pass="$ACCOUNT_PASS" \
         --langcode="en"
+    # Delete some data created in the "standard" install profile
+    # See https://www.drupal.org/project/drupal/issues/2583113
+    drupal --root=$HOME/web entity:delete shortcut_set default --no-interaction
+    # Set site uuid to match our config
+    UUID=$(grep uuid web/sites/default/config/system.site.yml | cut -d' ' -f2)
+    drupal --root=$HOME/web config:override system.site uuid $UUID
 }
 
 if [ "$CF_INSTANCE_INDEX" == "0" ]; then
