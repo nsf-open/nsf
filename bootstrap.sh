@@ -24,6 +24,8 @@ install_drupal() {
 
 if [ "$CF_INSTANCE_INDEX" == "0" ]; then
   drupal --root=$HOME/web list | grep database > /dev/null || install_drupal
-  # load configs here
-  # drupal --root=$HOME/web config:import ...
+  # Sync configs from code
+  drupal --root=$HOME/web config:import --directory $HOME/web/sites/default/config
+  # Clear the cache
+  drupal --root=$HOME/web cache:rebuild --no-interaction
 fi
