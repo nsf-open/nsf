@@ -1,0 +1,14 @@
+uuid: dabc3057-6878-4c0a-8b35-6b40a0d58a77
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.olpa_content_editor
+  module:
+    - user
+id: user_remove_role_action.olpa_content_editor
+label: 'Remove the OLPA content editor role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: olpa_content_editor

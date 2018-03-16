@@ -1,0 +1,14 @@
+uuid: c7326725-fa3c-4129-9270-0fde01f65e53
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.olpa_content_admin
+  module:
+    - user
+id: user_remove_role_action.olpa_content_admin
+label: 'Remove the OLPA content admin role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: olpa_content_admin

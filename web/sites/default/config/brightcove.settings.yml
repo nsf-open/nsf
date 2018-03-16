@@ -1,0 +1,6 @@
+defaultAPIClient: nsf_brightcove
+notification:
+  callbackExpirationTime: 86400
+disable_cron: 0
+_core:
+  default_config_hash: Zx0kBJgBN1RCrHyE_UtwiCHBQx3i4LKJCoryyY5Lu_s

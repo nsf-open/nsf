@@ -1,0 +1,23 @@
+uuid: 025c96d6-1b52-4523-8ce8-3abb3ec8ca3b
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_funding
+    - node.type.news
+id: node.news.field_funding
+field_name: field_funding
+entity_type: node
+bundle: news
+label: Funding
+description: 'The amount of funding that''s been allocated, in dollars.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: $
+  suffix: ''
+field_type: integer

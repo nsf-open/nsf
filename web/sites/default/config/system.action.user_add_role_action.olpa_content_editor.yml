@@ -1,0 +1,14 @@
+uuid: a76d53c6-da34-4cc4-824b-f90bbe56aa0b
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.olpa_content_editor
+  module:
+    - user
+id: user_add_role_action.olpa_content_editor
+label: 'Add the OLPA content editor role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: olpa_content_editor

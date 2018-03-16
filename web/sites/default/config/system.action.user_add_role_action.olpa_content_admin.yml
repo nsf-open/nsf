@@ -1,0 +1,14 @@
+uuid: 8ff78462-b09b-4a14-9358-67c134037eb8
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.olpa_content_admin
+  module:
+    - user
+id: user_add_role_action.olpa_content_admin
+label: 'Add the OLPA content admin role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: olpa_content_admin

@@ -1,0 +1,24 @@
+uuid: 2363a241-dcaf-4dd8-bc82-90ddd7382072
+langcode: en
+status: true
+dependencies: {  }
+id: olpa_content_editor
+label: 'OLPA content editor'
+weight: -7
+is_admin: null
+permissions:
+  - 'access in-place editing'
+  - 'create news content'
+  - 'create news_and_events workflow_transition'
+  - 'create page content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'revert page revisions'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition submit_for_review'
+  - 'view latest version'
+  - 'view news revisions'
+  - 'view page revisions'

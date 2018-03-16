@@ -1,0 +1,12 @@
+uuid: b4549e09-1c04-4e52-8d99-5241dd9f2d30
+langcode: en
+status: true
+dependencies:
+  module:
+    - brightcove
+_core:
+  default_config_hash: rffJwFhpGXup8AAIcrZhF9Z3O9M39VxWwRggIwn4kmY
+id: brightcove_video.embed
+label: Embed
+targetEntityType: brightcove_video
+cache: true

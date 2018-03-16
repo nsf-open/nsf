@@ -1,0 +1,10 @@
+uuid: 2824207b-2428-431a-9722-afd747a20686
+langcode: en
+status: true
+dependencies: {  }
+id: news_and_events_under_review
+label: 'Under Review'
+module: null
+wid: news_and_events
+weight: -8
+sysid: 0

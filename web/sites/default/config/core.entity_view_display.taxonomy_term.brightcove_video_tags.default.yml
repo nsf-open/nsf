@@ -1,0 +1,23 @@
+uuid: 7478cbff-7c2d-4dc5-aef3-a9b401f2e97c
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.brightcove_video_tags
+  module:
+    - text
+_core:
+  default_config_hash: pQ_wPJ7EN59_nTxSk7YC7ZDqCJBBcD7D9XBPKKdHQ5w
+id: taxonomy_term.brightcove_video_tags.default
+targetEntityType: taxonomy_term
+bundle: brightcove_video_tags
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

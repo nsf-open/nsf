@@ -1,0 +1,22 @@
+uuid: d6cef2b5-9a92-4478-80f2-2d6347de3294
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - nsf
+_core:
+  default_config_hash: fNNLN48MSGSLiqwIFywCuxH2Dk_IxDbaP0kYhg_IPrg
+id: nsf_content
+theme: nsf
+region: content
+weight: -3
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

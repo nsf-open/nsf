@@ -1,0 +1,22 @@
+uuid: f75abdcd-369b-4aaf-b85b-0323a8e377cd
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - nsf
+_core:
+  default_config_hash: MhtNdV__HKRTab0ZPjkPNfYL4Ng4UPBucDLoC7Rg5Eo
+id: nsf_help
+theme: nsf
+region: help
+weight: -7
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  provider: help
+  label_display: '0'
+visibility: {  }

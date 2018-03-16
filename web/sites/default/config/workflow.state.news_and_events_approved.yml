@@ -1,0 +1,10 @@
+uuid: 4c217c63-6746-40b9-92db-a9c17c9eaa64
+langcode: en
+status: true
+dependencies: {  }
+id: news_and_events_approved
+label: Approved
+module: null
+wid: news_and_events
+weight: -7
+sysid: 0
