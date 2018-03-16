@@ -1,38 +1,44 @@
 #!/bin/bash 
-set -euxo pipefail
+set -euo pipefail
 
-: ${ACCOUNT_NAME?} ${ACCOUNT_PASS?}
+SECRETS=$(echo $VCAP_SERVICES | jq -r '.["user-provided"][] | select(.name == "secrets") | .credentials')
 
-fail() {
-    echo FAIL $@
-    exit 1
+install_drupal() {
+    ROOT_USER_NAME=$(echo $SECRETS | jq -r '.ROOT_USER_NAME')
+    ROOT_USER_PASS=$(echo $SECRETS | jq -r '.ROOT_USER_PASS')
+
+    : "${ACCOUNT_NAME:?Need and root user name for Drupal}"
+    : "${ACCOUNT_PASS:?Need and root user pass for Drupal}"
+
+    drupal site:install \
+        --root=$HOME/web \
+        --no-interaction \
+        --account-name="$ROOT_USER_NAME" \
+        --account-pass="$ROOT_USER_PASS" \
+        --langcode="en"
+    # Delete some data created in the "standard" install profile
+    # See https://www.drupal.org/project/drupal/issues/2583113
+    drupal --root=$HOME/web entity:delete shortcut_set default --no-interaction
+    # Set site uuid to match our config
+    UUID=$(grep uuid web/sites/default/config/system.site.yml | cut -d' ' -f2)
+    drupal --root=$HOME/web config:override system.site uuid $UUID
 }
 
-bootstrap() {
-    creds=$(echo $VCAP_SERVICES | jq -r '.["aws-rds"][0].credentials')
-    [ $creds = "null" ] && fail "creds are null; need to bind database?"
+if [ "${CF_INSTANCE_INDEX:-''}" == "0" ]; then
+  drupal --root=$HOME/web list | grep database > /dev/null || install_drupal
+  # Sync configs from code
+  drupal --root=$HOME/web config:import --directory $HOME/web/sites/default/config
 
-    db_type=mysql
-    db_user=$(echo $creds | jq -r '.username')
-    db_pass=$(echo $creds | jq -r '.password')
-    db_port=$(echo $creds | jq -r '.port')
-    db_host=$(echo $creds | jq -r '.host')
-    db_name=$(echo $creds | jq -r '.db_name')
+  # Secrets
+  CRON_KEY=$(openssl rand -base64 32)  # Not used, so we set it to a random val
+  BRIGHTCOVE_ACCOUNT=$(echo $SECRETS | jq -r '.BRIGHTCOVE_ACCOUNT')
+  BRIGHTCOVE_CLIENT=$(echo $SECRETS | jq -r '.BRIGHTCOVE_CLIENT')
+  BRIGHTCOVE_SECRET=$(echo $SECRETS | jq -r '.BRIGHTCOVE_SECRET')
+  drupal --root=$HOME/web config:override scheduler.settings lightweight_cron_access_key $CRON_KEY > /dev/null
+  drupal --root=$HOME/web config:override brightcove.brightcove_api_client.nsf_brightcove account_id $BRIGHTCOVE_ACCOUNT > /dev/null
+  drupal --root=$HOME/web config:override brightcove.brightcove_api_client.nsf_brightcove client_id $BRIGHTCOVE_CLIENT > /dev/null
+  drupal --root=$HOME/web config:override brightcove.brightcove_api_client.nsf_brightcove secret_key $BRIGHTCOVE_SECRET > /dev/null
 
-    drupal site:install standard --root=$HOME/web --no-interaction \
-        --account-name=${ACCOUNT_NAME:-$(gen_cred ACCOUNT_NAME)} \
-        --account-pass=${ACCOUNT_PASS:-$(gen_cred ACCOUNT_PASS)} \
-        --langcode="en" \
-        --db-type=$db_type \
-        --db-user=$db_user \
-        --db-pass=$db_pass \
-        --db-port=$db_port \
-        --db-host=$db_host \
-        --db-name=$db_name 
-}
-
-drush --root=$HOME/web core-status bootstrap | grep -q "Successful" || bootstrap
-
-drush --root=$HOME/web pm-info flysystem_s3 --fields=Status | grep -q enabled ||
-    drush --root=$HOME/web pm-enable --yes flysystem_s3
-
+  # Clear the cache
+  drupal --root=$HOME/web cache:rebuild --no-interaction
+fi

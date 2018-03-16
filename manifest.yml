@@ -1,14 +1,19 @@
 ---
 applications:
-- name: nsf
+- name: nsf-demo
   buildpack: php_buildpack
+  instances: 1
   memory: 512M
   disk_quota: 512M
   timeout: 180
   services:
-    - # s3 bucket
-    - # db
-  env:
-    AWS_S3_ENDPOINT: ''
-    ACCOUNT_NAME: ''
-    HASH_SALT: ''
+    - database # cf create-service aws-rds medium-mysql database
+    - secrets  # cf create-user-provided-service secrets -p '{
+               # "BRIGHTCOVE_ACCOUNT": ...
+               # "BRIGHTCOVE_CLIENT": ...
+               # "BRIGHTCOVE_SECRET": ...
+               # "HASH_SALT": ...
+               # "ROOT_USER_NAME": ...,
+               # "ROOT_USER_PASS": ...,
+               # }'
+    - storage  # cf create-service s3 basic storage

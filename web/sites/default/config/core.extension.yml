@@ -44,7 +44,6 @@ module:
   media_entity_brightcove: 0
   menu_ui: 0
   node: 0
-  nsf_brightcove: 0
   options: 0
   page_cache: 0
   path: 0
