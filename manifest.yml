@@ -8,5 +8,12 @@ applications:
   timeout: 180
   services:
     - database # cf create-service aws-rds medium-mysql database
-    - secrets  # cf create-user-provided-service secrets -p '{"ROOT_USER_NAME": ..., "ROOT_USER_PASS": ..., "HASH_SALT": ...}'
+    - secrets  # cf create-user-provided-service secrets -p '{
+               # "BRIGHTCOVE_ACCOUNT": ...
+               # "BRIGHTCOVE_CLIENT": ...
+               # "BRIGHTCOVE_SECRET": ...
+               # "HASH_SALT": ...
+               # "ROOT_USER_NAME": ...,
+               # "ROOT_USER_PASS": ...,
+               # }'
     - storage  # cf create-service s3 basic storage
