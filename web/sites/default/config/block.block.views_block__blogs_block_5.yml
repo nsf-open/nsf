@@ -1,0 +1,30 @@
+uuid: 9fc47b43-e735-4a3f-89b1-5bf06a0502fa
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blogs
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap
+id: views_block__blogs_block_5
+theme: bootstrap
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:blogs-block_5'
+settings:
+  id: 'views_block:blogs-block_5'
+  label: 'MCB Blog'
+  provider: views
+  label_display: visible
+  views_label: 'MCB Blog'
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /blogs
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,48 @@
+uuid: b1401ddf-6cbe-4aa1-ab79-4e0cc55c51cb
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - ctools
+    - node
+    - system
+    - views
+  theme:
+    - nsf
+id: views_block__news_block_3
+theme: nsf
+region: sidebar_second
+weight: -7
+provider: null
+plugin: 'views_block:news-block_3'
+settings:
+  id: 'views_block:news-block_3'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+  context_mapping:
+    nid: '@node.node_route_context:node'
+visibility:
+  node_type:
+    id: node_type
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+  request_path:
+    id: request_path
+    pages: '/node/*/edit'
+    negate: true
+    context_mapping: {  }
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      news: news
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

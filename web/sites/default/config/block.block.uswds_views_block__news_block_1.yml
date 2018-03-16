@@ -1,0 +1,30 @@
+uuid: 43ed9592-1ba4-464f-a9a2-4846ba1b2046
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - system
+    - views
+  theme:
+    - uswds
+id: uswds_views_block__news_block_1
+theme: uswds
+region: content
+weight: -7
+provider: null
+plugin: 'views_block:news-block_1'
+settings:
+  id: 'views_block:news-block_1'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

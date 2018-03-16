@@ -1,0 +1,24 @@
+uuid: 7d62c14a-fdee-469c-8739-53b48d618fc8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_media_queries
+    - node.type.news
+  module:
+    - text
+id: node.news.field_media_queries
+field_name: field_media_queries
+entity_type: node
+bundle: news
+label: 'Media queries'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 'For questions about this piece, contact Cheryl Dybas at NSF. <br />Phone: (703) 292-7734<br /> Email: <a href="mailto:cydbas@nsf.gov">cydbas@nsf.gov</a>'
+    format: basic_html
+default_value_callback: ''
+settings: {  }
+field_type: text

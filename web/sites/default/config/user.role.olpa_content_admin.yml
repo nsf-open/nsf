@@ -1,0 +1,33 @@
+uuid: 0b71900d-e4a8-4421-9396-7614cc7c3bbe
+langcode: en
+status: true
+dependencies: {  }
+id: olpa_content_admin
+label: 'OLPA content admin'
+weight: -6
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'access in-place editing'
+  - 'administer nodes'
+  - 'create news content'
+  - 'create news_and_events workflow_transition'
+  - 'create page content'
+  - 'edit any news content'
+  - 'edit any page content'
+  - 'edit own news content'
+  - 'edit own page content'
+  - 'revert all revisions'
+  - 'revert news revisions'
+  - 'revert page revisions'
+  - 'use editorial transition archive'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition archived_published'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition publish'
+  - 'use editorial transition submit_for_review'
+  - 'view all revisions'
+  - 'view any unpublished content'
+  - 'view latest version'
+  - 'view news revisions'
+  - 'view page revisions'

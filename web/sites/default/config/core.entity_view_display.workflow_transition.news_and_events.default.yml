@@ -1,0 +1,12 @@
+uuid: 9e842269-29c1-419c-9dbb-3c45419719e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - workflow.workflow.news_and_events
+id: workflow_transition.news_and_events.default
+targetEntityType: workflow_transition
+bundle: news_and_events
+mode: default
+content: {  }
+hidden: {  }

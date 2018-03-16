@@ -1,0 +1,15 @@
+uuid: bdc86e8a-cb4f-41c1-9bb4-5b7a07e465d7
+langcode: en
+status: true
+dependencies: {  }
+id: submit_for_review
+label: 'Submit for review'
+events:
+  -
+    event_name: 'rules_entity_presave:node'
+description: ''
+tags:
+  - ''
+config_version: '3'
+expression:
+  id: rules_rule

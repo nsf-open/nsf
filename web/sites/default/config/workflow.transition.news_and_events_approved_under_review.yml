@@ -1,0 +1,16 @@
+uuid: 3e2f5444-85d4-463e-9e23-ffff1fe3ba2d
+langcode: en
+status: true
+dependencies: {  }
+id: news_and_events_approved_under_review
+label: null
+module: null
+from_sid: news_and_events_approved
+to_sid: news_and_events_under_review
+roles:
+  administrator: administrator
+  olpa_content_admin: olpa_content_admin
+  workflow_author: '0'
+  anonymous: '0'
+  authenticated: '0'
+  olpa_content_editor: '0'

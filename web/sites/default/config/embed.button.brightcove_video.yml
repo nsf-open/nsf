@@ -1,0 +1,23 @@
+uuid: b4de79c1-71bb-42dd-bf97-e52400b78b00
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'file:file:47a61fbb-b309-4f02-9213-46cf42042ff0'
+  module:
+    - brightcove
+    - entity_embed
+_core:
+  default_config_hash: NeUn1hwC27Dugk6IPWQDE_MfGC-gX3esTR0owIwosVI
+label: 'Brightcove video'
+id: brightcove_video
+type_id: entity
+type_settings:
+  entity_type: brightcove_video
+  bundles: {  }
+  display_plugins:
+    - 'view_mode:brightcove_video.embed'
+  entity_browser: brightcove_video_browser_widget
+  entity_browser_settings:
+    display_review: true
+icon_uuid: 47a61fbb-b309-4f02-9213-46cf42042ff0

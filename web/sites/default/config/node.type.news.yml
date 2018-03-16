@@ -1,0 +1,30 @@
+uuid: 68f76735-9610-4b8d-ad4b-47801e71a05d
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+    - scheduler
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+  scheduler:
+    expand_fieldset: when_required
+    fields_display_mode: fieldset
+    publish_enable: true
+    publish_past_date: publish
+    publish_required: false
+    publish_revision: true
+    publish_touch: true
+    unpublish_enable: true
+    unpublish_required: false
+    unpublish_revision: true
+name: Article
+type: news
+description: 'A news release, press statement, etc.'
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,30 @@
+uuid: 8b50cf33-a16a-4d72-a89d-96a7157f2100
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.blogs
+  module:
+    - system
+    - views
+  theme:
+    - bootstrap
+id: views_block__blogs_block_4
+theme: bootstrap
+region: content
+weight: -6
+provider: null
+plugin: 'views_block:blogs-block_4'
+settings:
+  id: 'views_block:blogs-block_4'
+  label: DEBrief
+  provider: views
+  label_display: visible
+  views_label: DEBrief
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: /blogs
+    negate: false
+    context_mapping: {  }

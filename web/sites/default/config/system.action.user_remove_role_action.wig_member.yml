@@ -1,0 +1,14 @@
+uuid: 674c4ab4-f21b-47fa-9845-e0bf87f6050e
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.wig_member
+  module:
+    - user
+id: user_remove_role_action.wig_member
+label: 'Remove the WIG member role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: wig_member

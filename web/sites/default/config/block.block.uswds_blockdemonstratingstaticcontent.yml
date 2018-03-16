@@ -1,0 +1,40 @@
+uuid: a8920614-b8c5-4819-87eb-6ebce67b644b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:58243bab-93b1-4b4d-a3b5-6410a345f692'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - uswds
+id: uswds_blockdemonstratingstaticcontent
+theme: uswds
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'block_content:58243bab-93b1-4b4d-a3b5-6410a345f692'
+settings:
+  id: 'block_content:58243bab-93b1-4b4d-a3b5-6410a345f692'
+  label: 'Block demonstrating static content'
+  provider: block_content
+  label_display: visible
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  user_role:
+    id: user_role
+    roles:
+      olpa_content_editor: olpa_content_editor
+      olpa_content_admin: olpa_content_admin
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+  request_path:
+    id: request_path
+    pages: ''
+    negate: true
+    context_mapping: {  }

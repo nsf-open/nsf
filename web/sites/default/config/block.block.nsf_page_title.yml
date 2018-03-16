@@ -1,0 +1,20 @@
+uuid: 1f8d24dc-a5d7-4f72-b183-4432efefea2b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nsf
+_core:
+  default_config_hash: 1TQP4b3ZnlzvIH9bj6cpCz_SyUHdJjLQkZnHpikjjhw
+id: nsf_page_title
+theme: nsf
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

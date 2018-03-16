@@ -1,0 +1,13 @@
+uuid: ''
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: mJhmisLlSYTJccOgeEcFWivzXD9BrliG8wDm1TmuNdA
+id: nsf_brightcove
+label: 'NSF Brightcove'
+account_id: ''
+client_id: ''
+default_player: default
+secret_key: ''
+max_custom_fields: 10

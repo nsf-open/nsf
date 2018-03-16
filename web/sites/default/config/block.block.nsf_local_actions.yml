@@ -1,0 +1,20 @@
+uuid: f3798361-aa5d-4c23-8a0a-95b28c3d4248
+langcode: en
+status: true
+dependencies:
+  theme:
+    - nsf
+_core:
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
+id: nsf_local_actions
+theme: nsf
+region: header
+weight: -7
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

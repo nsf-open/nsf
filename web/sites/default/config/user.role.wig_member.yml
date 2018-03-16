@@ -1,0 +1,20 @@
+uuid: 3386185e-82f7-4376-84d2-3542a5ba517c
+langcode: en
+status: true
+dependencies: {  }
+id: wig_member
+label: 'WIG member'
+weight: -5
+is_admin: null
+permissions:
+  - 'access in-place editing'
+  - 'create news_and_events workflow_transition'
+  - 'create page content'
+  - 'edit any page content'
+  - 'edit own page content'
+  - 'revert page revisions'
+  - 'use editorial transition archived_draft'
+  - 'use editorial transition create_new_draft'
+  - 'use editorial transition submit_for_review'
+  - 'view latest version'
+  - 'view page revisions'

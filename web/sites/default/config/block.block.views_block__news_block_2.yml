@@ -1,0 +1,24 @@
+uuid: 2787e407-fec7-4ea1-b875-55b184821221
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.news
+  module:
+    - views
+  theme:
+    - bootstrap
+id: views_block__news_block_2
+theme: bootstrap
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'views_block:news-block_2'
+settings:
+  id: 'views_block:news-block_2'
+  label: 'Recent news'
+  provider: views
+  label_display: visible
+  views_label: 'Recent news'
+  items_per_page: none
+visibility: {  }

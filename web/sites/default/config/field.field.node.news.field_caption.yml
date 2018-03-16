@@ -1,0 +1,21 @@
+uuid: b04bf031-b9af-4f46-b304-e160963bf6a0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_caption
+    - node.type.news
+  module:
+    - text
+id: node.news.field_caption
+field_name: field_caption
+entity_type: node
+bundle: news
+label: 'Caption for featured image'
+description: 'The photo credit and caption for the featured image.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text
