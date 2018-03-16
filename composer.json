@@ -36,6 +36,7 @@
         "drupal/instagram_block": "^2.0",
         "drupal/media_entity": "^1.7",
         "drupal/pathauto": "^1.1",
+        "drupal/restrict_by_ip": "4.x-dev",
         "drupal/rules": "^3.0@alpha",
         "drupal/s3fs": "^3.0@alpha",
         "drupal/scheduler": "^1.0",
