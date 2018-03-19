@@ -1,6 +1,5 @@
 ---
 buildpack: php_buildpack
-memory: 512M
 disk_quota: 512M
 timeout: 180
 services:
@@ -17,8 +16,10 @@ services:
 
 applications:
 - name: nsf-demo
+  memory: 256M
   instances: 1
 - name: cronish
   no-route: true
   command: ./cronish.sh
   health-check-type: process
+  memory: 128M
