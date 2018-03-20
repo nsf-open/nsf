@@ -2,6 +2,7 @@
 set -euo pipefail
 
 SECRETS=$(echo $VCAP_SERVICES | jq -r '.["user-provided"][] | select(.name == "secrets") | .credentials')
+APP_NAME=$(echo $VCAP_APPLICATION | jq -r '.name')
 
 install_drupal() {
     ROOT_USER_NAME=$(echo $SECRETS | jq -r '.ROOT_USER_NAME')
@@ -24,7 +25,7 @@ install_drupal() {
     drupal --root=$HOME/web config:override system.site uuid $UUID
 }
 
-if [ "${CF_INSTANCE_INDEX:-''}" == "0" ]; then
+if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "web" ]; then
   drupal --root=$HOME/web list | grep database > /dev/null || install_drupal
   # Sync configs from code
   drupal --root=$HOME/web config:import --directory $HOME/web/sites/default/config
