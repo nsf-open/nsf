@@ -7,8 +7,8 @@ install_drupal() {
     ROOT_USER_NAME=$(echo $SECRETS | jq -r '.ROOT_USER_NAME')
     ROOT_USER_PASS=$(echo $SECRETS | jq -r '.ROOT_USER_PASS')
 
-    : "${ACCOUNT_NAME:?Need and root user name for Drupal}"
-    : "${ACCOUNT_PASS:?Need and root user pass for Drupal}"
+    : "${ROOT_USER_NAME:?Need and root user name for Drupal}"
+    : "${ROOT_USER_PASS:?Need and root user pass for Drupal}"
 
     drupal site:install \
         --root=$HOME/web \
