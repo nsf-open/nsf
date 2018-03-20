@@ -21,7 +21,8 @@ applications:
   memory: 256M
   instances: 1
   routes:
-    - route: nsf-demo.app.cloud.gov
+    - route: beta.nsf.gov
+    - route: nsf-beta.app.cloud.gov
 - name: cronish
   <<: *defaults
   no-route: true
