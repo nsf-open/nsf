@@ -26,8 +26,8 @@ install_drupal() {
     drupal --root=$APP_ROOT/web config:override system.site uuid $UUID
 }
 
-if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "nsf-demo" ]; then
-  drupal --root=$APP_ROOT/web list | grep database > /dev/null || install_drupal
+if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "web" ]; then
+  drupal --root=$HOME/web list | grep database > /dev/null || install_drupal
   # Sync configs from code
   drupal --root=$APP_ROOT/web config:import --directory $APP_ROOT/web/sites/default/config
 
