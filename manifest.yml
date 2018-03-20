@@ -1,9 +1,6 @@
 ---
-applications:
-- name: nsf-demo
+default_config: &defaults
   buildpack: php_buildpack
-  instances: 1
-  memory: 512M
   disk_quota: 512M
   timeout: 180
   services:
@@ -17,3 +14,15 @@ applications:
                # "ROOT_USER_PASS": ...,
                # }'
     - storage  # cf create-service s3 basic storage
+
+applications:
+- name: nsf-demo
+  <<: *defaults
+  memory: 256M
+  instances: 1
+- name: cronish
+  <<: *defaults
+  no-route: true
+  command: ./cronish.sh
+  health-check-type: process
+  memory: 128M
