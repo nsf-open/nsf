@@ -1,11 +1,11 @@
 uuid: f047fa5b-89c8-4f6b-80de-7ea36c91cf55
-name: 'nsf demo'
+name: beta.nsf.gov
 mail: rhys.fureigh@gsa.gov
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /node
+  front: /blog
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
