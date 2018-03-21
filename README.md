@@ -51,3 +51,32 @@ Within the `bin` directory, there are a handful of helpful scripts to make
 running `drupal`, `drush`, etc. within the context of our Dockerized app
 easier. As noted above, they are written with bash in mind, but should be easy
 to port to other environments.
+
+### File storage
+
+We've configured our file fields to store content in S3; in this way, they
+persist between app restarts and deploys. Unfortunately, those configurations
+are therefore also present locally, which can lead to unexpected results (we
+*don't* include sensitive bucket credentials, so we'll see "The file could not
+be uploaded."). If needing to work with  file uploads locally, modify the
+relevant field's "storage" away from "Flysystem: S3" to "Public files" (which
+means the local disk). This can be configured in the Drupal administration
+interface, or by editing the configuration files in
+`web/sites/default/config`. Notably, all instances of
+
+```yaml
+uri_scheme: s3
+```
+
+should become
+
+```yaml
+uri_scheme: public
+```
+
+and Docker restarted.
+
+Alternatively, if testing S3 integration, it's possible to configure Docker to
+use a real S3 bucket by editing `docker-compose.yml`. That file holds a series
+of values under the "s3" key which will need to be modified with your access
+credentials.
