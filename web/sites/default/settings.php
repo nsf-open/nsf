@@ -771,7 +771,7 @@ $settings['file_scan_ignore_directories'] = [
  */
 $settings['entity_update_batch_size'] = 50;
 
-$config_directories['sync'] = '../config/sync';
+$config_directories['sync'] = './sites/default/config/';
 $settings['install_profile'] = 'standard';
 include $app_root . '/' . $site_path . '/settings.cf.php';
 
