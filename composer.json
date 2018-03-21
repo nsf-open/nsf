@@ -40,7 +40,6 @@
         "drupal/scheduler": "^1.0",
         "drupal/time_formatter": "1.x-dev",
         "drupal/tour_ui": "^1.0@alpha",
-        "drupal/workflow": "^1.0",
         "drush/drush": "~8.0|^9.0.0-beta8",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
