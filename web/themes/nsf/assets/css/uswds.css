@@ -3696,4 +3696,7 @@ img.image-style-news-main-story {
   .usa-header-basic .usa-logo img {
     max-width: none; }
 
+.usa-navbar em.usa-logo-text {
+  margin-left: -5000em; }
+
 /*# sourceMappingURL=uswds.css.map */
