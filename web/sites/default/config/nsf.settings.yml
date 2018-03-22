@@ -5,9 +5,10 @@ features:
   favicon: 0
 logo:
   use_default: 0
-  path: 'public://nsf_logo-orig_0.png'
+  path: 'themes/nsf/logo.png'
 favicon:
   use_default: 1
+  path: ''
 uswds_header_style: basic
 uswds_header_mega: 0
 uswds_search: 0

@@ -1,7 +1,7 @@
 // Import overrides of USWDS variables.
 @import "_variables.scss";
 // Import the USWDS source.
-@import "../node_modules/uswds/src/stylesheets/uswds.scss";
+@import "../assets/scss/uswds.scss";
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-sans;
@@ -94,4 +94,8 @@ img.image-style-news-main-story {
     img {
         max-width: none;
     }
+}
+
+.usa-navbar em.usa-logo-text {
+    margin-left: -5000em;
 }
