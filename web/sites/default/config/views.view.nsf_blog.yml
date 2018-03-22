@@ -66,11 +66,11 @@ display:
         options:
           uses_fields: false
           columns: 2
-          automatic_width: true
+          automatic_width: false
           alignment: vertical
-          col_class_default: true
-          col_class_custom: ''
-          row_class_default: true
+          col_class_default: false
+          col_class_custom: usa-width-one-half
+          row_class_default: false
           row_class_custom: ''
       row:
         type: 'entity:aggregator_item'
