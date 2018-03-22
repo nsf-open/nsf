@@ -23,7 +23,7 @@ display:
         type: none
         options: {  }
       cache:
-        type: tag
+        type: none
         options: {  }
       query:
         type: views_query
@@ -62,9 +62,21 @@ display:
             previous: ‹‹
             next: ››
       style:
-        type: default
+        type: grid
+        options:
+          uses_fields: false
+          columns: 2
+          automatic_width: false
+          alignment: vertical
+          col_class_default: false
+          col_class_custom: usa-width-one-half
+          row_class_default: false
+          row_class_custom: ''
       row:
         type: 'entity:aggregator_item'
+        options:
+          relationship: none
+          view_mode: default
       fields:
         title:
           table: aggregator_item
@@ -147,7 +159,7 @@ display:
           entity_type: aggregator_item
           entity_field: timestamp
           plugin_id: date
-      title: 'Blog entries'
+      title: 'NSF on Tumblr'
       header: {  }
       footer: {  }
       empty: {  }
