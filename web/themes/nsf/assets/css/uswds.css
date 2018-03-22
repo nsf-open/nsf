@@ -3638,7 +3638,7 @@ h1, h2, h3, h4, h5, h6 {
 h3.feed-item-title a,
 article.aggregator-item .field--name-fid a {
   text-decoration: none;
-  color: #112E51; }
+  color: #0071BC; }
 
 .region-sidebar-first,
 .region-sidebar-second,
@@ -3646,7 +3646,10 @@ article.aggregator-item .field--name-fid a {
   background-color: #E7F5FF; }
 
 .view-nsf-blog article.aggregator-item {
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  padding: 2rem;
+  padding-top: 0.2rem;
+  margin-bottom: 3rem; }
 
 .region-sidebar-second {
   float: right;

@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 h3.feed-item-title a,
 article.aggregator-item .field--name-fid a {
     text-decoration: none;
-    color: $color-primary-darkest;
+    color: $color-primary;
 }
 
 .region-sidebar-first,
@@ -22,6 +22,9 @@ article.aggregator-item .field--name-fid a {
 
 .view-nsf-blog article.aggregator-item {
     background-color: $color-white;
+    padding: 2rem;
+    padding-top: 0.2rem;
+    margin-bottom: 3rem;
 }
 
 .region-sidebar-second {
