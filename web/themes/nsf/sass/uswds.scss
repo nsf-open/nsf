@@ -8,9 +8,20 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
 }
 
+h3.feed-item-title a,
+article.aggregator-item .field--name-fid a {
+    text-decoration: none;
+    color: $color-primary-darkest;
+}
+
 .region-sidebar-first,
-.region-sidebar-second {
+.region-sidebar-second,
+.uswds-middle-section {
     background-color: $color-primary-alt-light;
+}
+
+.view-nsf-blog article.aggregator-item {
+    background-color: $color-white;
 }
 
 .region-sidebar-second {

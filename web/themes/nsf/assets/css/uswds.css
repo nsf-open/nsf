@@ -3635,9 +3635,18 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Source Sans Pro";
   font-weight: bold; }
 
+h3.feed-item-title a,
+article.aggregator-item .field--name-fid a {
+  text-decoration: none;
+  color: #112E51; }
+
 .region-sidebar-first,
-.region-sidebar-second {
+.region-sidebar-second,
+.uswds-middle-section {
   background-color: #E7F5FF; }
+
+.view-nsf-blog article.aggregator-item {
+  background-color: #ffffff; }
 
 .region-sidebar-second {
   float: right;
