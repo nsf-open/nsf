@@ -12,7 +12,7 @@ favicon:
 uswds_header_style: basic
 uswds_header_mega: 0
 uswds_search: 0
-uswds_government_banner: 0
+uswds_government_banner: 1
 uswds_footer_style: slim
 uswds_footer_agency: 0
 uswds_footer_agency_name: ''
