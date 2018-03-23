@@ -1,0 +1,8 @@
+uuid: e6aeed50-3dc2-4de9-a1fb-4bd68577a1c7
+langcode: en
+status: true
+dependencies: {  }
+id: footer-national-science-fou
+label: 'Footer: National Science Foundation'
+description: 'NSF links for footer'
+locked: false
