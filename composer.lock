@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1e8f381c09766b5590557d88c592e396",
+    "content-hash": "d6c7c030ac9642e06b18a07c44437f58",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -3033,6 +3033,48 @@
             "support": {
                 "source": "http://cgit.drupalcode.org/inline_entity_form"
             }
+        },
+        {
+            "name": "drupal/lightfoot",
+            "version": "dev-1.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/lightfoot",
+                "reference": "fb0636a7d47030ab7f637f7f612b368209d0e5e8"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.x-dev",
+                    "datestamp": "1510633985",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "David Strauss",
+                    "homepage": "https://www.drupal.org/user/93254"
+                }
+            ],
+            "description": "Moves derived and aggregated content caching to the edge.",
+            "homepage": "https://www.drupal.org/project/lightfoot",
+            "support": {
+                "source": "http://cgit.drupalcode.org/lightfoot"
+            },
+            "time": "2017-11-14T04:29:37+00:00"
         },
         {
             "name": "drupal/masquerade",
@@ -7215,6 +7257,7 @@
         "drupal/entity_embed": 10,
         "drupal/flysystem_s3": 15,
         "drupal/inline_entity_form": 10,
+        "drupal/lightfoot": 20,
         "drupal/masquerade": 10,
         "drupal/rules": 15,
         "drupal/time_formatter": 20,
