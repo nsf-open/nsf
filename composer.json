@@ -33,6 +33,7 @@
         "drupal/features": "^3.5",
         "drupal/flysystem_s3": "^1.0@alpha",
         "drupal/inline_entity_form": "^1.0@beta",
+        "drupal/lightfoot": "1.x-dev",
         "drupal/masquerade": "^2.0@beta",
         "drupal/media_entity": "^1.7",
         "drupal/pathauto": "^1.1",
