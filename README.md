@@ -205,6 +205,50 @@ can also remove it from the composer dependencies.
 See the `module:uninstall` and `theme:uninstall` steps of the bootstrap script
 to see how this is implemented.
 
+### Upgrading dependencies (e.g. Drupal)
+
+Updating dependencies through Composer is simple, though somewhat slow. First,
+we should spin down our local install:
+
+```
+docker-compose down
+```
+
+Then, we run the
+[`update`](https://getcomposer.org/doc/01-basic-usage.md#updating-dependencies-to-their-latest-versions)
+command:
+
+```
+bin/composer update [name-of-package, e.g. drupal/core]
+```
+
+After crunching away a while, you should see (e.g. via `git status`) that the
+`composer.lock` file has changed. Note that this command *doesn't* modify
+`composer.json` -- it will only update the package in a way that's
+[compatible](https://semver.org/). If you need to upgrade a major version
+(i.e. a backward-incompatible release), use the
+[`require`](https://getcomposer.org/doc/03-cli.md#require) command, e.g.
+
+```
+bin/composer require drupal/core:9.*
+```
+
+After installing the update, we should spin up our local instance
+
+```
+docker-compose up
+```
+
+and browse around [http://localhost:8080/](http://localhost:8080/) to make
+sure nothing's obviously broken. We shouldn't expect to see anything amiss if
+we've just `update`d, but need to be more careful around major version
+changes.
+
+We should then proceed with steps five through eight (exporting the config,
+committing, sending to GitHub, etc.). Even though we haven't actively modified
+any of the configurations, the updated libraries may have generated new ones
+which would be good to capture.
+
 ### Common errors
 
 #### There are more config file changes than I expected
