@@ -22,7 +22,17 @@ content:
       trim_length: 600
     third_party_settings: {  }
     region: content
+  content_moderation_control:
+    weight: -20
+    region: content
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_caption: true
+  field_featured_image: true
+  field_funding: true
+  field_media_queries: true
+  field_press_release_number: true
+  field_publication_date: true
+  field_subtitle: true
