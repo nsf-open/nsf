@@ -38,10 +38,10 @@ if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "web" ]; then
   drupal --root=$APP_ROOT/web config:import
 
   # Secrets
-  CRON_KEY=$(openssl rand -base64 32)  # Not used, so we set it to a random val
   BRIGHTCOVE_ACCOUNT=$(echo $SECRETS | jq -r '.BRIGHTCOVE_ACCOUNT')
   BRIGHTCOVE_CLIENT=$(echo $SECRETS | jq -r '.BRIGHTCOVE_CLIENT')
   BRIGHTCOVE_SECRET=$(echo $SECRETS | jq -r '.BRIGHTCOVE_SECRET')
+  CRON_KEY=$(echo $SECRETS | jq -r '.CRON_KEY')
   drupal --root=$APP_ROOT/web config:override scheduler.settings lightweight_cron_access_key $CRON_KEY > /dev/null
   drupal --root=$APP_ROOT/web config:override brightcove.brightcove_api_client.nsf_brightcove account_id $BRIGHTCOVE_ACCOUNT > /dev/null
   drupal --root=$APP_ROOT/web config:override brightcove.brightcove_api_client.nsf_brightcove client_id $BRIGHTCOVE_CLIENT > /dev/null
