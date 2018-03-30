@@ -41,6 +41,7 @@ services:
           "user-provided": [{
             "name": "secrets",
             "credentials": {
+              "ADMIN_EMAIL": "secret@example.com",
               "BRIGHTCOVE_ACCOUNT": "SECRET",
               "BRIGHTCOVE_CLIENT": "SECRET",
               "BRIGHTCOVE_SECRET": "SECRET",

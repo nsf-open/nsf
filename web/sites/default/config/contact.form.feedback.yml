@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - rhys.fureigh@gsa.gov
+  - secret@example.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'
