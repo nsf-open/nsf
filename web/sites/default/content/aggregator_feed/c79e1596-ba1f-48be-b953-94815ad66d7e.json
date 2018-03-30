@@ -1,0 +1,67 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/aggregator\/sources\/1?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/aggregator_feed\/aggregator_feed"
+        }
+    },
+    "fid": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c79e1596-ba1f-48be-b953-94815ad66d7e"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en"
+        }
+    ],
+    "title": [
+        {
+            "value": "National Science Foundation"
+        }
+    ],
+    "url": [
+        {
+            "value": "http:\/\/nationalsciencefoundation.tumblr.com\/rss"
+        }
+    ],
+    "refresh": [
+        {
+            "value": 3600
+        }
+    ],
+    "checked": [
+        {
+            "value": "2018-03-30T14:24:49+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "queued": [
+        {
+            "value": "1970-01-01T00:00:00+00:00",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "link": [
+        {
+            "value": "http:\/\/nationalsciencefoundation.tumblr.com\/"
+        }
+    ],
+    "description": [
+        {
+            "value": "The National Science Foundation (NSF) is an independent federal agency created by Congress in 1950. We fund a significant proportion of federally supported basic research. Follow our Tumblr to learn about projects, people and infrastructure in every\u2026"
+        }
+    ],
+    "hash": [
+        {
+            "value": "83e424da2f3877b827bcb8185732f278f6e234bb61eba0dd3fa47fe985357201"
+        }
+    ]
+}
