@@ -1,0 +1,87 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/1\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": 1
+        }
+    ],
+    "uuid": [
+        {
+            "value": "6e3de191-6840-4ccf-8242-1d44a20ea30f"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "title": [
+        {
+            "value": "All News",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "footer-national-science-fou"
+        }
+    ],
+    "link": [
+        {
+            "uri": "https:\/\/www.nsf.gov\/news\/",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": false
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "expanded": [
+        {
+            "value": false
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-03-30T21:35:35+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}
