@@ -47,6 +47,9 @@ if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "web" ]; then
   drupal --root=$APP_ROOT/web config:override brightcove.brightcove_api_client.nsf_brightcove client_id $BRIGHTCOVE_CLIENT > /dev/null
   drupal --root=$APP_ROOT/web config:override brightcove.brightcove_api_client.nsf_brightcove secret_key $BRIGHTCOVE_SECRET > /dev/null
 
+  # Import initial content
+  drush --root=$APP_ROOT/web default-content-deploy:import
+
   # Clear the cache
   drupal --root=$APP_ROOT/web cache:rebuild --no-interaction
 fi
