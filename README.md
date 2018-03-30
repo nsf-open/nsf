@@ -98,7 +98,7 @@ use a real S3 bucket by editing `docker-compose.yml`. That file holds a series
 of values under the "s3" key which will need to be modified with your access
 credentials.
 
-### Workflow
+### Configuration workflow
 
 Making configuration changes to the application comes in roughly eight small steps:
 1. get the latest code
@@ -185,6 +185,45 @@ git push origin 333-add-the-whatsit
 ```
 
 And request a review in GitHub's interface.
+
+### Content workflow
+
+We'll also treat some pieces of content similar to configuration -- we want to
+deploy it with the code base rather than add/modify it in individual
+environments. The steps for this are very similar to the Config workflow:
+
+1. get the latest code
+1. create a feature branch
+1. add/edit content in the Drupal admin
+1. export the content
+1. commit the changes
+1. push your branch to GitHub
+1. create a pull request to be reviewed
+
+The first two steps are identical to the Config workflow, so we'll skip to the
+third. Start the application:
+
+```
+docker-compose up
+```
+
+Then [http://localhost:8080/user/login](log in) as root (password: root).
+Create or edit content (e.g. Aggregator feeds, pages, etc.) through the Drupal
+admin.
+
+Next, we'll export this content via Drush:
+
+```sh
+# Export all entities of a particular type
+bin/drush default-content-deploy:export [type-of-entity e.g. aggregator_feed]
+# Export individual entities
+bin/drush default-content-deploy:export [type-of-entity] --entity-id=[ids e.g. 1,3,7]
+```
+
+Then, we'll review all of the changes and commit those that are relevant.
+Notably, we're expecting new or modified files in `web/sites/default/content`.
+After committing, we'll sent to GitHub and create a pull request as with
+config changes.
 
 ### Removing dependencies
 
