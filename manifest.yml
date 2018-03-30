@@ -1,6 +1,6 @@
 ---
 default_config: &defaults
-  buildpack: php_buildpack
+  buildpack: https://github.com/cloudfoundry/multi-buildpack#v1.0.3
   disk_quota: 512M
   timeout: 180
   services:
