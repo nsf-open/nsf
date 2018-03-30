@@ -21,6 +21,7 @@ install_drupal() {
     # Delete some data created in the "standard" install profile
     # See https://www.drupal.org/project/drupal/issues/2583113
     drupal --root=$APP_ROOT/web entity:delete shortcut_set default --no-interaction
+    drupal --root=$APP_ROOT/web config:delete active field.field.node.article.body --no-interaction
     # Set site uuid to match our config
     UUID=$(grep uuid $APP_ROOT/web/sites/default/config/system.site.yml | cut -d' ' -f2)
     drupal --root=$APP_ROOT/web config:override system.site uuid $UUID
