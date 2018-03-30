@@ -13,7 +13,7 @@ default_time: '09:00:00'
 default_unpublish_enable: false
 default_unpublish_required: false
 default_unpublish_revision: false
-lightweight_cron_access_key: 0f18f312c39cb2e0ab85
+lightweight_cron_access_key: SECRET
 log: true
 time_letters: hHgGisaA
 time_only_format: 'H:i:s'
