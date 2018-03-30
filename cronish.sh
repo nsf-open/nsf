@@ -3,6 +3,6 @@ set -euo pipefail
 
 while true
 do
-  drupal --root=$HOME/web cron:execute all
+  drush --root=$HOME/web core:cron
   sleep 15m
 done
