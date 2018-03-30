@@ -168,10 +168,8 @@ the command line, try
 git add -p
 ```
 
-to interactively select changes to stage for the commit. Note that you may see
-more config changes than expected
-([#189](https://github.com/18F/nsf/issues/189)); only add the changes relevant
-to your edits. Once the changes are staged, commit them, e.g. with
+to interactively select changes to stage for the commit. Once the changes are
+staged, commit them, e.g. with
 
 ```
 git commit -v
@@ -289,9 +287,6 @@ any of the configurations, the updated libraries may have generated new ones
 which would be good to capture.
 
 ### Common errors
-
-#### There are more config file changes than I expected
-See [#189](https://github.com/18F/nsf/issues/189)
 
 #### Edits to `web/sites/default/xxx` won't go away
 Drupal's installation changes the directory permissions for
