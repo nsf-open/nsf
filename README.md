@@ -221,6 +221,14 @@ unix environments, we can run
 chmod u+w web/sites/default
 ```
 
+#### Drush is missing many commands
+We only recently added the necessary mysql client to the Dockerfile, so you
+may need to rebuild it:
+
+```
+docker-compose build
+```
+
 ### Start from scratch
 
 As Docker is managing our environment, it's relatively easy to blow away our
