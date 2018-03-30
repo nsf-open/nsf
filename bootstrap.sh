@@ -31,7 +31,7 @@ if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "web" ]; then
   # Mild data migration: fully delete database entries related to these
   # modules. These plugins (and the dependencies) can be removed once they've
   # been uninstalled in all environments
-  drupal --root=$APP_ROOT/web module:uninstall workflow
+  drupal --root=$APP_ROOT/web module:uninstall masquerade workflow
   drupal --root=$APP_ROOT/web theme:uninstall bootstrap
 
   # Sync configs from code

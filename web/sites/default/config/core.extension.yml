@@ -41,7 +41,6 @@ module:
   inline_entity_form: 0
   inline_form_errors: 0
   link: 0
-  masquerade: 0
   media_entity: 0
   media_entity_brightcove: 0
   menu_ui: 0
