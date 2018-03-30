@@ -98,7 +98,7 @@ use a real S3 bucket by editing `docker-compose.yml`. That file holds a series
 of values under the "s3" key which will need to be modified with your access
 credentials.
 
-### Workflow
+### Configuration workflow
 
 Making configuration changes to the application comes in roughly eight small steps:
 1. get the latest code
@@ -186,6 +186,45 @@ git push origin 333-add-the-whatsit
 
 And request a review in GitHub's interface.
 
+### Content workflow
+
+We'll also treat some pieces of content similar to configuration -- we want to
+deploy it with the code base rather than add/modify it in individual
+environments. The steps for this are very similar to the Config workflow:
+
+1. get the latest code
+1. create a feature branch
+1. add/edit content in the Drupal admin
+1. export the content
+1. commit the changes
+1. push your branch to GitHub
+1. create a pull request to be reviewed
+
+The first two steps are identical to the Config workflow, so we'll skip to the
+third. Start the application:
+
+```
+docker-compose up
+```
+
+Then [http://localhost:8080/user/login](log in) as root (password: root).
+Create or edit content (e.g. Aggregator feeds, pages, etc.) through the Drupal
+admin.
+
+Next, we'll export this content via Drush:
+
+```sh
+# Export all entities of a particular type
+bin/drush default-content-deploy:export [type-of-entity e.g. aggregator_feed]
+# Export individual entities
+bin/drush default-content-deploy:export [type-of-entity] --entity-id=[ids e.g. 1,3,7]
+```
+
+Then, we'll review all of the changes and commit those that are relevant.
+Notably, we're expecting new or modified files in `web/sites/default/content`.
+After committing, we'll sent to GitHub and create a pull request as with
+config changes.
+
 ### Removing dependencies
 
 As we add modules to our site, they're rolled out via configuration
@@ -263,6 +302,14 @@ unix environments, we can run
 
 ```
 chmod u+w web/sites/default
+```
+
+#### Drush is missing many commands
+We only recently added the necessary mysql client to the Dockerfile, so you
+may need to rebuild it:
+
+```
+docker-compose build
 ```
 
 ### Start from scratch
@@ -523,3 +570,31 @@ cf service beta.nsf.gov
 ```
 
 We'll then need to create that CNAME record in the nsf.gov DNS.
+
+### Updating PHP
+
+We use the Cloud Foundry's
+[Multi-buildpack](https://github.com/cloudfoundry/multi-buildpack) to allow us
+to install a mysql client (essential for Drush). This also requires we specify
+our PHP buildpack, which is unfortunate as it means we can't rely on the
+cloud.gov folks to deploy it for us. Luckily, updating the PHP buildpack is
+easy and we can check the latest version cloud.gov has tested.
+
+First, we'll find the version number by querying cloud.gov.
+```
+cf buildpacks
+```
+
+The output will include a PHP buildpack with version number, e.g.
+`php-buildpack-v4.3.51.zip`. This refers to the upstream (Cloud Foundry)
+buildpack version, so we'll update our `multi-buildpack.yml` accordingly:
+
+```yml
+buildpacks:
+  # We need the "apt" build pack to install a mysql client for drush
+  - https://github.com/cloudfoundry/apt-buildpack#v0.1.1
+  - https://github.com/cloudfoundry/php-buildpack#v4.3.51
+```
+
+We can also review cloud.gov's [release notes](https://cloud.gov/updates/) to
+see which buildpacks have been updated, though it's not as timely.

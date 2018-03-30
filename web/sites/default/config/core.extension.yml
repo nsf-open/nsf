@@ -18,6 +18,8 @@ module:
   ctools: 0
   datetime: 0
   dblog: 0
+  default_content: 0
+  default_content_deploy: 0
   devel: 0
   devel_generate: 0
   diff: 0
@@ -35,6 +37,7 @@ module:
   filter: 0
   flysystem: 0
   flysystem_s3: 0
+  hal: 0
   help: 0
   history: 0
   image: 0
@@ -54,6 +57,7 @@ module:
   scheduler: 0
   scheduler_rules_integration: 0
   search: 0
+  serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0

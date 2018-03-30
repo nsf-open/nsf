@@ -7,7 +7,7 @@ RUN apt-get update &&\
     apt-get install -y \
       libbz2-dev libcurl4-openssl-dev libmcrypt-dev \
       libwebp-dev libjpeg-dev libpng12-dev \
-      git jq wget &&\
+      git jq wget mysql-client &&\
     docker-php-ext-install bz2 curl gd mbstring mcrypt pdo pdo_mysql zip &&\
     apt-get autoremove -y &&\
     rm -rf /var/lib/apt/lists/* &&\
