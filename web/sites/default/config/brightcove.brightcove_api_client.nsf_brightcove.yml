@@ -6,8 +6,8 @@ _core:
   default_config_hash: mJhmisLlSYTJccOgeEcFWivzXD9BrliG8wDm1TmuNdA
 id: nsf_brightcove
 label: 'NSF Brightcove'
-account_id: ''
-client_id: ''
+account_id: SECRET
+client_id: SECRET
 default_player: default
-secret_key: ''
+secret_key: SECRET
 max_custom_fields: 10

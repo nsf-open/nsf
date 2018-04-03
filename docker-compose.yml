@@ -41,9 +41,11 @@ services:
           "user-provided": [{
             "name": "secrets",
             "credentials": {
+              "ADMIN_EMAIL": "secret@example.com",
               "BRIGHTCOVE_ACCOUNT": "SECRET",
               "BRIGHTCOVE_CLIENT": "SECRET",
               "BRIGHTCOVE_SECRET": "SECRET",
+              "CRON_KEY": "SECRET",
               "HASH_SALT": "SECRET",
               "ROOT_USER_NAME": "root",
               "ROOT_USER_PASS": "root"
