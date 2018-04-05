@@ -1,0 +1,98 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/21\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": 21
+        }
+    ],
+    "uuid": [
+        {
+            "value": "ae222b1f-b138-466b-ae33-0a464bae5993"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "title": [
+        {
+            "value": "Project Reports",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "Project Reports",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "footer-research-gov"
+        }
+    ],
+    "link": [
+        {
+            "uri": "https:\/\/www.research.gov\/research-portal\/appmanager\/base\/desktop?_nfpb=true&_pageLabel=research_node_display&_nodePath=\/researchGov\/Service\/Desktop\/PublicOutcomesReport.html",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": false
+        }
+    ],
+    "weight": [
+        {
+            "value": 3
+        }
+    ],
+    "expanded": [
+        {
+            "value": false
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "parent": [
+        {
+            "value": "menu_link_content:e4168237-4768-4bb1-9eb8-01a4f0ac055d"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-04-05T21:47:16+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

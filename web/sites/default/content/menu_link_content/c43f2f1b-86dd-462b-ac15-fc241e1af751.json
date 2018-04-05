@@ -1,0 +1,93 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/24\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": 24
+        }
+    ],
+    "uuid": [
+        {
+            "value": "c43f2f1b-86dd-462b-ac15-fc241e1af751"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "title": [
+        {
+            "value": "NSF Award Highlights",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "NSF Award Highlights",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "footer-research-gov"
+        }
+    ],
+    "link": [
+        {
+            "uri": "internal:#",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": true
+        }
+    ],
+    "weight": [
+        {
+            "value": 1
+        }
+    ],
+    "expanded": [
+        {
+            "value": true
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-04-05T21:51:15+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

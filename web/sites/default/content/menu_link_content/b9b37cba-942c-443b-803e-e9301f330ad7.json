@@ -1,0 +1,98 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/25\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": 25
+        }
+    ],
+    "uuid": [
+        {
+            "value": "b9b37cba-942c-443b-803e-e9301f330ad7"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "title": [
+        {
+            "value": "Research Spending & Results",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "Research Spending & Results",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "footer-research-gov"
+        }
+    ],
+    "link": [
+        {
+            "uri": "https:\/\/www.research.gov\/research-portal\/appmanager\/base\/desktop?_nfpb=true&_eventName=viewQuickSearchFormEvent_so_rsr",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": false
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "expanded": [
+        {
+            "value": false
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "parent": [
+        {
+            "value": "menu_link_content:c43f2f1b-86dd-462b-ac15-fc241e1af751"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-04-05T21:52:21+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}

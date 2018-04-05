@@ -1,0 +1,98 @@
+{
+    "_links": {
+        "self": {
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/27\/edit?_format=hal_json"
+        },
+        "type": {
+            "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
+        }
+    },
+    "id": [
+        {
+            "value": 27
+        }
+    ],
+    "uuid": [
+        {
+            "value": "d5e5aad6-f42c-48d3-8825-fe56b62fc1f6"
+        }
+    ],
+    "langcode": [
+        {
+            "value": "en",
+            "lang": "en"
+        }
+    ],
+    "bundle": [
+        {
+            "value": "menu_link_content"
+        }
+    ],
+    "title": [
+        {
+            "value": "Contact Help Desk",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "Contact Help Desk",
+            "lang": "en"
+        }
+    ],
+    "menu_name": [
+        {
+            "value": "footer-research-gov"
+        }
+    ],
+    "link": [
+        {
+            "uri": "https:\/\/www.research.gov\/research-portal\/appmanager\/base\/desktop?_nfpb=true&_pageLabel=research_contact_us",
+            "title": "",
+            "options": []
+        }
+    ],
+    "external": [
+        {
+            "value": false
+        }
+    ],
+    "rediscover": [
+        {
+            "value": false
+        }
+    ],
+    "weight": [
+        {
+            "value": 0
+        }
+    ],
+    "expanded": [
+        {
+            "value": false
+        }
+    ],
+    "enabled": [
+        {
+            "value": true
+        }
+    ],
+    "parent": [
+        {
+            "value": "menu_link_content:ebcd6b15-f09f-4d5e-9478-ada67aba04bd"
+        }
+    ],
+    "changed": [
+        {
+            "value": "2018-04-05T21:53:32+00:00",
+            "lang": "en",
+            "format": "Y-m-d\\TH:i:sP"
+        }
+    ],
+    "default_langcode": [
+        {
+            "value": true,
+            "lang": "en"
+        }
+    ]
+}
