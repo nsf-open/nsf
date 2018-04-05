@@ -1,7 +1,7 @@
 {
     "_links": {
         "self": {
-            "href": "http:\/\/default\/admin\/structure\/menu\/item\/1\/edit?_format=hal_json"
+            "href": "http:\/\/default\/admin\/structure\/menu\/item\/4\/edit?_format=hal_json"
         },
         "type": {
             "href": "http:\/\/drupal.org\/rest\/type\/menu_link_content\/menu_link_content"
@@ -9,12 +9,12 @@
     },
     "id": [
         {
-            "value": 1
+            "value": 4
         }
     ],
     "uuid": [
         {
-            "value": "6e3de191-6840-4ccf-8242-1d44a20ea30f"
+            "value": "f49e138a-1106-4930-91c8-0cf26bc0c66d"
         }
     ],
     "langcode": [
@@ -30,7 +30,13 @@
     ],
     "title": [
         {
-            "value": "All News",
+            "value": "Funding & Awards",
+            "lang": "en"
+        }
+    ],
+    "description": [
+        {
+            "value": "Funding & Awards",
             "lang": "en"
         }
     ],
@@ -41,7 +47,7 @@
     ],
     "link": [
         {
-            "uri": "https:\/\/www.nsf.gov\/news\/",
+            "uri": "internal:#",
             "title": "",
             "options": []
         }
@@ -53,12 +59,12 @@
     ],
     "rediscover": [
         {
-            "value": false
+            "value": true
         }
     ],
     "weight": [
         {
-            "value": -50
+            "value": 1
         }
     ],
     "expanded": [
@@ -71,14 +77,9 @@
             "value": true
         }
     ],
-    "parent": [
-        {
-            "value": "menu_link_content:6e293a07-90b9-4763-bf40-3d21be9c0feb"
-        }
-    ],
     "changed": [
         {
-            "value": "2018-04-05T20:20:49+00:00",
+            "value": "2018-04-05T20:24:07+00:00",
             "lang": "en",
             "format": "Y-m-d\\TH:i:sP"
         }
