@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Minimal markup for a NSF footer menu block.
+ * By default the USWDS theme doesn't render menu
+ * blocks' titles.
+ */
+#}
+{{ title_prefix }}
+  {% if label %}
+    <h3{{ title_attributes }}>{{ label }}</h3>
+  {% endif %}
+{{ title_suffix }}
+{{ content }}
