@@ -2,7 +2,7 @@ cache:
   page:
     max_age: 0
 css:
-  preprocess: false
+  preprocess: true
   gzip: true
 fast_404:
   enabled: true
