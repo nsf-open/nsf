@@ -29,15 +29,6 @@ services:
               "username": "root"
             }
           }],
-          "s3": [{
-            "name": "storage",
-            "credentials": {
-             "access_key_id": "SECRET",
-             "bucket": "SECRET",
-             "region": "SECRET",
-             "secret_access_key": "SECRET"
-            }
-          }],
           "user-provided": [{
             "name": "secrets",
             "credentials": {

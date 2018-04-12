@@ -11,7 +11,7 @@ field_name: field_featured_image
 entity_type: node
 type: image
 settings:
-  uri_scheme: s3
+  uri_scheme: public
   default_image:
     uuid: ''
     alt: ''

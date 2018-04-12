@@ -71,32 +71,27 @@ to port to other environments.
 
 ### File storage
 
-We've configured our file fields to store content in S3; in this way, they
-persist between app restarts and deploys. Unfortunately, those configurations
-are therefore also present locally, which can lead to unexpected results (we
-*don't* include sensitive bucket credentials, so we'll see "The file could not
-be uploaded."). If needing to work with  file uploads locally, modify the
-relevant field's "storage" away from "Flysystem: S3" to "Public files" (which
-means the local disk). This can be configured in the Drupal administration
-interface, or by editing the configuration files in
-`web/sites/default/config`. Notably, all instances of
+By default, we don't use S3 when running Drupal locally. If wanting to
+simulate the S3 environment, we need to add our credentials into the
+`VCAP_SERVICES` environment variable. Edit `docker-compose.yml` and insert
+something similar to the following above "user-provided":
 
-```yaml
-uri_scheme: s3
+```json
+"s3": [{
+  "name": "storage",
+  "credentials": {
+   "access_key_id": "SECRET",
+   "bucket": "SECRET",
+   "region": "SECRET",
+   "secret_access_key": "SECRET"
+  }
+}],
 ```
 
-should become
-
-```yaml
-uri_scheme: public
+To find the values we're using in cloud.gov, use
 ```
-
-and Docker restarted.
-
-Alternatively, if testing S3 integration, it's possible to configure Docker to
-use a real S3 bucket by editing `docker-compose.yml`. That file holds a series
-of values under the "s3" key which will need to be modified with your access
-credentials.
+cf env web
+```
 
 ### Configuration workflow
 

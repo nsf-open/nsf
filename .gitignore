@@ -17,6 +17,7 @@ core
 vendor
 
 # Ignore local versions of modules.
+storage
 modules/*
 web/modules/contrib/*
 web/themes/contrib/*
