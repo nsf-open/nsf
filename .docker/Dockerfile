@@ -13,6 +13,8 @@ RUN apt-get update &&\
     rm -rf /var/lib/apt/lists/* &&\
     rm -rf /var/cache/apt/*
 
+RUN a2enmod rewrite proxy proxy_http
+
 COPY ["install-composer.sh", "/tmp"]
 RUN "/tmp/install-composer.sh"
 
