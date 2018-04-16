@@ -20,7 +20,7 @@ applications:
 - name: web
   <<: *defaults
   memory: 256M
-  instances: 1
+  instances: 2
   routes:
     - route: nsf-beta.app.cloud.gov
 #   - route: beta.nsf.gov
