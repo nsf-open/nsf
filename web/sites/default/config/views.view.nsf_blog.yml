@@ -377,7 +377,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          empty: true
+          empty: false
           tokenize: false
           content:
             value: '<a href="https://www.nsf.gov/social/policies.jsp">Social Media Policies</a>'
