@@ -361,6 +361,7 @@ display:
         use_more_always: false
         use_more_text: false
         title: true
+        footer: false
       filter_groups:
         operator: AND
         groups:
