@@ -62,6 +62,20 @@ faster.
 As the service runs, we can directly modify the PHP files in our app and see
 our changes in near-real time.
 
+### Making styling changes
+
+This codebase's theme is a subtheme of the [U.S. Web Design System](https://drupal.org/project/uswds) theme. Accordingly, its overrides are stored in `/web/themes/nsf`.
+
+To make styling changes, first tell [Sass](https://sass-lang.com) to watch the relevant files:
+
+```
+sass --watch web/themes/nsf/sass:web/themes/nsf/assets/css/
+```
+
+As long as that command is running, it'll watch every `.scss` file in the `sass/` folder for changes, compiling and saving CSS in the `assets/css/` folder every time you save a change to a `.scss` file.
+
+Now, in a separate Terminal window and/or your favorite text editor, you can make changes to `web/themes/nsf/sass/uswds.scss` (or `_variables.scss`) and have your changes saved.
+
 ### Other commands
 
 Within the `bin` directory, there are a handful of helpful scripts to make
