@@ -204,7 +204,7 @@ third. Start the application:
 docker-compose up
 ```
 
-Then [http://localhost:8080/user/login](log in) as root (password: root).
+Then [log in](http://localhost:8080/user/login) as root (password: root).
 Create or edit content (e.g. Aggregator feeds, pages, etc.) through the Drupal
 admin.
 
