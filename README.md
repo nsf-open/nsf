@@ -94,7 +94,7 @@ cf env web
 ```
 
 As with other edits to the local secrets, extra care should be taken when
-exporting your config, let those configuration files contain the true secret
+exporting your config, lest those configuration files contain the true secret
 values rather than dummy "SECRET" strings.
 
 ### Configuration workflow
