@@ -5,6 +5,14 @@ SECRETS=$(echo $VCAP_SERVICES | jq -r '.["user-provided"][] | select(.name == "s
 APP_NAME=$(echo $VCAP_APPLICATION | jq -r '.name')
 APP_ROOT=$(dirname "${BASH_SOURCE[0]}")
 
+S3_BUCKET=$(echo $VCAP_SERVICES | jq -r '.["s3"][] | select(.name == "storage") | .credentials.bucket')
+S3_REGION=$(echo $VCAP_SERVICES | jq -r '.["s3"][] | select(.name == "storage") | .credentials.region')
+if [ -n "$S3_BUCKET" ] && [ -n "$S3_REGION" ]; then
+  # Add Proxy rewrite rules to the top of the htaccess file
+  sed -i "s/S3_BUCKET/$S3_BUCKET/g" $APP_ROOT/web/.htaccess
+  sed -i "s/S3_REGION/$S3_REGION/g" $APP_ROOT/web/.htaccess
+fi
+
 install_drupal() {
     ROOT_USER_NAME=$(echo $SECRETS | jq -r '.ROOT_USER_NAME')
     ROOT_USER_PASS=$(echo $SECRETS | jq -r '.ROOT_USER_PASS')
@@ -32,7 +40,7 @@ if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "web" ]; then
   # Mild data migration: fully delete database entries related to these
   # modules. These plugins (and the dependencies) can be removed once they've
   # been uninstalled in all environments
-  drupal --root=$APP_ROOT/web module:uninstall masquerade workflow
+  drupal --root=$APP_ROOT/web module:uninstall flysystem flysystem_s3 masquerade workflow
   drupal --root=$APP_ROOT/web theme:uninstall bootstrap
 
   # Sync configs from code

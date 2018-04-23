@@ -38,6 +38,7 @@
         "drupal/media_entity": "^1.7",
         "drupal/pathauto": "^1.1",
         "drupal/rules": "^3.0@alpha",
+        "drupal/s3fs": "^3.0@alpha",
         "drupal/scheduler": "^1.0",
         "drupal/time_formatter": "1.x-dev",
         "drupal/tour_ui": "^1.0@alpha",
