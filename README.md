@@ -116,7 +116,7 @@ git fetch origin
 git checkout origin/master
 ```
 
-alternatively:
+Alternatively:
 
 ```
 git checkout master
