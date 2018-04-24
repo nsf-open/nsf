@@ -62,6 +62,20 @@ faster.
 As the service runs, we can directly modify the PHP files in our app and see
 our changes in near-real time.
 
+### Making styling changes
+
+This codebase's theme is a subtheme of the [U.S. Web Design System](https://drupal.org/project/uswds) theme. Accordingly, its overrides are stored in `/web/themes/nsf`.
+
+To make styling changes, first tell [Sass](https://sass-lang.com) to watch the relevant files:
+
+```
+sass --watch web/themes/nsf/sass:web/themes/nsf/assets/css/
+```
+
+As long as that command is running, it'll watch every `.scss` file in the `sass/` folder for changes, compiling and saving CSS in the `assets/css/` folder every time you save a change to a `.scss` file.
+
+Now, in a separate Terminal window and/or your favorite text editor, you can make changes to `web/themes/nsf/sass/uswds.scss` (or `_variables.scss`) and have your changes saved.
+
 ### Other commands
 
 Within the `bin` directory, there are a handful of helpful scripts to make
@@ -94,7 +108,7 @@ cf env web
 ```
 
 As with other edits to the local secrets, extra care should be taken when
-exporting your config, let those configuration files contain the true secret
+exporting your config, lest those configuration files contain the true secret
 values rather than dummy "SECRET" strings.
 
 ### Configuration workflow
@@ -116,7 +130,7 @@ git fetch origin
 git checkout origin/master
 ```
 
-alternatively:
+Alternatively:
 
 ```
 git checkout master
@@ -204,7 +218,7 @@ third. Start the application:
 docker-compose up
 ```
 
-Then [http://localhost:8080/user/login](log in) as root (password: root).
+Then [log in](http://localhost:8080/user/login) as root (password: root).
 Create or edit content (e.g. Aggregator feeds, pages, etc.) through the Drupal
 admin.
 
