@@ -55,7 +55,6 @@ if [ "${CF_INSTANCE_INDEX:-''}" == "0" ] && [ "${APP_NAME}" == "web" ]; then
   drupal --root=$APP_ROOT/web config:override brightcove.brightcove_api_client.nsf_brightcove account_id $BRIGHTCOVE_ACCOUNT > /dev/null
   drupal --root=$APP_ROOT/web config:override brightcove.brightcove_api_client.nsf_brightcove client_id $BRIGHTCOVE_CLIENT > /dev/null
   drupal --root=$APP_ROOT/web config:override brightcove.brightcove_api_client.nsf_brightcove secret_key $BRIGHTCOVE_SECRET > /dev/null
-  drupal --root=$APP_ROOT/web config:override contact.form.feedback recipients.0 $ADMIN_EMAIL > /dev/null
   drupal --root=$APP_ROOT/web config:override scheduler.settings lightweight_cron_access_key $CRON_KEY > /dev/null
   drupal --root=$APP_ROOT/web config:override system.site mail $ADMIN_EMAIL > /dev/null
   drupal --root=$APP_ROOT/web config:override update.settings notification.emails.0 $ADMIN_EMAIL > /dev/null
