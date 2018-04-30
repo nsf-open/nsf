@@ -66,10 +66,24 @@ our changes in near-real time.
 
 This codebase's theme is a subtheme of the [U.S. Web Design System](https://drupal.org/project/uswds) theme. Accordingly, its overrides are stored in `/web/themes/nsf`.
 
-To make styling changes, first tell [Sass](https://sass-lang.com) to watch the relevant files:
+Our style changes are all within the context of the `nsf` "theme", so we'll
+start by getting there:
 
 ```
-sass --watch web/themes/nsf/sass:web/themes/nsf/assets/css/
+cd web/themes/nsf
+```
+
+If this is the first time we're editing a theme, we next need to install all
+of the relevant node modules:
+
+```
+bin/npm install
+```
+
+Finally, we'll start our "watch" script:
+
+```
+bin/npm run build:watch
 ```
 
 As long as that command is running, it'll watch every `.scss` file in the `sass/` folder for changes, compiling and saving CSS in the `assets/css/` folder every time you save a change to a `.scss` file.

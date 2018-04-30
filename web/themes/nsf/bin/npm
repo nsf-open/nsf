@@ -1,0 +1,9 @@
+#!/bin/bash
+set -euo pipefail
+
+docker run \
+  --rm -it\
+  --volume $PWD:/app \
+  --workdir /app \
+  node:8.11.1\
+  npm "$@"
