@@ -1,0 +1,32 @@
+uuid: 4fe47205-ad99-41c4-b10e-a7303517f0b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - instagram_block
+    - system
+  theme:
+    - nsf
+id: instagramblock
+theme: nsf
+region: content
+weight: -5
+provider: null
+plugin: instagram_block_block
+settings:
+  id: instagram_block_block
+  label: 'NSF on Instagram'
+  provider: instagram_block
+  label_display: visible
+  access_token: SECRET
+  count: 6
+  width: 250
+  height: 250
+  img_resolution: thumbnail
+  cache_time_minutes: 1440
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
