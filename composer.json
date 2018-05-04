@@ -33,6 +33,7 @@
         "drupal/entity_embed": "^1.0@beta",
         "drupal/features": "^3.5",
         "drupal/inline_entity_form": "^1.0@beta",
+        "drupal/instagram_block": "^2.0",
         "drupal/media_entity": "^1.7",
         "drupal/pathauto": "^1.1",
         "drupal/rules": "^3.0@alpha",
