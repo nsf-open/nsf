@@ -5,9 +5,9 @@ dependencies:
   module:
     - aggregator
 id: nsf_blog
-label: Blog
+label: 'External blogs'
 module: views
-description: 'NSF custom view. Displays blog entries imported from external blog.'
+description: 'NSF custom view. Displays blog entries imported from external sources.'
 tag: ''
 base_table: aggregator_item
 base_field: iid
@@ -148,7 +148,20 @@ display:
           plugin_id: date
       title: 'NSF on Tumblr'
       header: {  }
-      footer: {  }
+      footer:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: '<a href="https://www.nsf.gov/social/policies.jsp">Social Media Policies</a>'
+            format: basic_html
+          plugin_id: text
       empty: {  }
       relationships: {  }
       arguments: {  }
@@ -162,26 +175,19 @@ display:
   block_1:
     display_plugin: block
     id: block_1
-    display_title: Block
+    display_title: 'Tumblr block'
     position: 3
     display_options:
       display_extenders: {  }
-      style:
-        type: default
       defaults:
-        style: false
-        row: false
-        pager: false
+        style: true
+        row: true
+        pager: true
         fields: false
         footer: true
-      row:
-        type: fields
-      pager:
-        type: some
-        options:
-          items_per_page: 5
-          offset: 0
-      block_description: 'Blog entries (all)'
+        filters: false
+        filter_groups: false
+      block_description: 'NSF on Tumblr'
       fields:
         title:
           table: aggregator_item
@@ -314,6 +320,57 @@ display:
           entity_type: aggregator_item
           entity_field: timestamp
           plugin_id: field
+      display_description: ''
+      block_category: 'Social Media'
+      filters:
+        fid:
+          id: fid
+          table: aggregator_item
+          field: fid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: '2'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: aggregator_item
+          entity_field: fid
+          plugin_id: numeric
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -338,52 +395,6 @@ display:
       path: blog.xml
       displays:
         default: default
-        page_1: page_1
-    cache_metadata:
-      max-age: -1
-      contexts:
-        - 'languages:language_content'
-        - 'languages:language_interface'
-      tags: {  }
-  page_1:
-    display_plugin: page
-    id: page_1
-    display_title: Page
-    position: 1
-    display_options:
-      display_extenders: {  }
-      path: blog
-      filters: {  }
-      defaults:
-        filters: false
-        filter_groups: false
-        use_more: false
-        use_more_always: false
-        use_more_text: false
-        title: true
-        footer: false
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
-      enabled: true
-      use_more: false
-      use_more_always: false
-      use_more_text: more
-      footer:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: '<a href="https://www.nsf.gov/social/policies.jsp">Social Media Policies</a>'
-            format: basic_html
-          plugin_id: text
     cache_metadata:
       max-age: -1
       contexts:

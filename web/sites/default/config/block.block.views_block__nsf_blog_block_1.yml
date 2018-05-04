@@ -1,0 +1,30 @@
+uuid: 12a04aa3-6f99-4beb-8dfc-59881beed555
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.nsf_blog
+  module:
+    - system
+    - views
+  theme:
+    - nsf
+id: views_block__nsf_blog_block_1
+theme: nsf
+region: content
+weight: -4
+provider: null
+plugin: 'views_block:nsf_blog-block_1'
+settings:
+  id: 'views_block:nsf_blog-block_1'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
