@@ -1,0 +1,24 @@
+uuid: 2ef021c2-0395-414b-a5cf-2d0242ace566
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-national-science-fou
+  module:
+    - system
+  theme:
+    - nsf
+id: footernationalsciencefoundation
+theme: nsf
+region: footer_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-national-science-fou'
+settings:
+  id: 'system_menu_block:footer-national-science-fou'
+  label: 'National Science Foundation'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

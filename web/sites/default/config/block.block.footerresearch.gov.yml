@@ -1,0 +1,24 @@
+uuid: ab29e5ed-fc41-46e6-9ce8-5449727b6d97
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-research-gov
+  module:
+    - system
+  theme:
+    - nsf
+id: footerresearch.gov
+theme: nsf
+region: footer_menu
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-research-gov'
+settings:
+  id: 'system_menu_block:footer-research-gov'
+  label: Research.gov
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

@@ -3552,7 +3552,7 @@ input.usa-input-medium {
       left: auto;
       position: relative; } }
 
-input[type=search] {
+input[type="search"] {
   /* stylelint-disable-line selector-no-qualifying-type */
   box-sizing: border-box;
   -webkit-appearance: none; }
@@ -3738,7 +3738,8 @@ select.form-select {
 .usa-form-large {
   max-width: none; }
 
-form [type="submit"], form [type="submit"] {
+form [type=submit],
+form [type=submit] {
   display: inline-block; }
 
 textarea {
@@ -3747,7 +3748,9 @@ textarea {
 label {
   margin-top: 1rem; }
 
-input, textarea, select {
+input,
+textarea,
+select {
   max-width: none; }
 
 #block-nsf-views-block-news-block-1 ul {
@@ -3769,3 +3772,6 @@ img.image-style-news-main-story {
 
 .usa-navbar em.usa-logo-text {
   margin-left: -5000em; }
+
+.region-footer-menu li.usa-footer-primary-link {
+  pointer-events: none; }

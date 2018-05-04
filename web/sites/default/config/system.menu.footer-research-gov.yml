@@ -1,0 +1,8 @@
+uuid: 15a5991d-1290-428a-864d-c62b25259c85
+langcode: en
+status: true
+dependencies: {  }
+id: footer-research-gov
+label: 'Footer: Research.gov'
+description: 'Research.gov links for footer'
+locked: false
