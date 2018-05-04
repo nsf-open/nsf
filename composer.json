@@ -73,6 +73,15 @@
         ]
     },
     "extra": {
+        "merge-plugin": {
+            "include": [
+                "web/core/composer.json",
+                "web/modules/contrib/brightcove/composer.json"
+            ],
+            "recurse": false,
+            "replace": false,
+            "merge-extra": false
+        },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
             "web/libraries/{$name}": ["type:drupal-library"],
