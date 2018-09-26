@@ -7389,6 +7389,7 @@
         "drupal/entity_embed": 10,
         "drupal/inline_entity_form": 10,
         "drupal/rules": 15,
+        "drupal/restrict_by_ip": 20,
         "drupal/s3fs": 15,
         "drupal/time_formatter": 20,
         "drupal/tour_ui": 15
@@ -7397,6 +7398,6 @@
     "prefer-lowest": false,
     "platform": {
         "php": "^7.1.0"
-    },
+},
     "platform-dev": []
 }
