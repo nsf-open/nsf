@@ -6,7 +6,7 @@ RUN sed -i 's/html/web/g' /etc/apache2/sites-available/000-default.conf
 RUN apt-get update &&\
     apt-get install -y \
       libbz2-dev libcurl4-openssl-dev libmcrypt-dev \
-      libwebp-dev libjpeg-dev libpng12-dev \
+      libwebp-dev libjpeg-dev libpng-dev \
       git jq wget mysql-client &&\
     docker-php-ext-install bz2 curl gd mbstring mcrypt pdo pdo_mysql zip &&\
     apt-get autoremove -y &&\
